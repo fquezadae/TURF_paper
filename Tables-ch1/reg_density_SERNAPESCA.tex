@@ -1,0 +1,53 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{c}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}   &\multicolumn{1}{c}{(4)}   &\multicolumn{1}{c}{(5)}   &\multicolumn{1}{c}{(6)}   \\
+\midrule
+Neighboring TURF    &      -0.003   &      -0.002   &       0.001   &       0.001   &      -0.016   &      -0.015   \\
+                    &     (0.083)   &     (0.083)   &     (0.083)   &     (0.083)   &     (0.082)   &     (0.082)   \\
+\addlinespace
+Regulation          &      -0.478***&      -0.480***&      -0.463***&      -0.464***&      -0.459***&      -0.461***\\
+                    &     (0.130)   &     (0.130)   &     (0.130)   &     (0.130)   &     (0.127)   &     (0.127)   \\
+\addlinespace
+Number of active areas by union&      -0.032   &      -0.031   &      -0.030   &      -0.030   &      -0.037   &      -0.037   \\
+                    &     (0.064)   &     (0.064)   &     (0.064)   &     (0.064)   &     (0.064)   &     (0.064)   \\
+\addlinespace
+Number of species harvested&       0.202** &       0.202** &       0.200** &       0.200** &       0.213** &       0.214** \\
+                    &     (0.095)   &     (0.095)   &     (0.095)   &     (0.095)   &     (0.095)   &     (0.095)   \\
+\addlinespace
+Salinity (13 $\leq$ PSU $<$ 14)&      -0.333** &      -0.332** &      -0.331** &      -0.330** &      -0.328** &      -0.327** \\
+                    &     (0.149)   &     (0.149)   &     (0.149)   &     (0.149)   &     (0.148)   &     (0.148)   \\
+\addlinespace
+Salinity (PSU $\geq$ 14)&      -0.293   &      -0.290   &      -0.306   &      -0.305   &      -0.323   &      -0.321   \\
+                    &     (0.251)   &     (0.251)   &     (0.253)   &     (0.253)   &     (0.247)   &     (0.247)   \\
+\addlinespace
+ln(Inspection intensity for all species)&       0.013** &               &               &               &               &               \\
+                    &     (0.005)   &               &               &               &               &               \\
+\addlinespace
+ln(Inspection time for all species)&               &       0.012** &               &               &               &               \\
+                    &               &     (0.005)   &               &               &               &               \\
+\addlinespace
+ln(Inspection intensity for loco) &               &               &       0.011** &               &               &               \\
+                    &               &               &     (0.005)   &               &               &               \\
+\addlinespace
+ln(Inspection time for loco)&               &               &               &       0.010** &               &               \\
+                    &               &               &               &     (0.005)   &               &               \\
+\addlinespace
+ln(Inspection intensity for other species)&               &               &               &               &       0.012*  &               \\
+                    &               &               &               &               &     (0.007)   &               \\
+\addlinespace
+ln(Inspection time for other species)&               &               &               &               &               &       0.011*  \\
+                    &               &               &               &               &               &     (0.006)   \\
+\addlinespace
+Constant            &       0.183   &       0.167   &       0.163   &       0.148   &       0.189   &       0.179   \\
+                    &     (0.211)   &     (0.209)   &     (0.210)   &     (0.208)   &     (0.218)   &     (0.215)   \\
+\midrule
+Observations        &        1971   &        1971   &        1971   &        1971   &        1971   &        1971   \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\). Standard errors in parentheses.}\\
+\multicolumn{7}{l}{\footnotesize Fishing season, area fixed-effect and El Niño Index are included in all models.}\\
+\multicolumn{7}{l}{\footnotesize El Niño Index is included as an interactive variable with closest cove FE's.}\\
+\multicolumn{7}{l}{\footnotesize Robust standard errors are clustered at the fishers' organization-level.}\\
+\end{tabular}
+}

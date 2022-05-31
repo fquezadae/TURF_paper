@@ -1,0 +1,37 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\toprule
+                    &\multicolumn{2}{c}{Patrolling exogeneous}&\multicolumn{2}{c}{Patrolling endogeneous}\\\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+                    &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}   &\multicolumn{1}{c}{(4)}   \\
+\midrule
+ln(Distance patrolled near-shore)&       0.122***&       0.123***&       0.114** &       0.161** \\
+                    &     (0.042)   &     (0.040)   &     (0.058)   &     (0.066)   \\
+\addlinespace
+ln(Distance patrolled overland)&       0.012   &               &       0.060   &               \\
+                    &     (0.038)   &               &     (0.077)   &               \\
+\addlinespace
+ln(Harvest$_{t-1}$)       &      -0.182***&      -0.183***&      -0.198***&      -0.188***\\
+                    &     (0.052)   &     (0.052)   &     (0.051)   &     (0.056)   \\
+\addlinespace
+ln(Abundance)       &      -0.040   &      -0.039   &      -0.019   &      -0.029   \\
+                    &     (0.051)   &     (0.051)   &     (0.055)   &     (0.055)   \\
+\addlinespace
+ln(Quota)           &       0.652***&       0.652***&       0.675***&       0.682***\\
+                    &     (0.085)   &     (0.085)   &     (0.087)   &     (0.091)   \\
+\addlinespace
+ln(Price)           &      -0.044   &      -0.053   &       0.080   &       0.052   \\
+                    &     (0.245)   &     (0.248)   &     (0.260)   &     (0.256)   \\
+\addlinespace
+Regulation          &      -0.322*  &      -0.315*  &      -0.429** &      -0.354** \\
+                    &     (0.171)   &     (0.168)   &     (0.170)   &     (0.172)   \\
+\midrule
+Observations        &         829   &         829   &         829   &         829   \\
+AR(2) test \textit{p}-value   &     0.007          &        0.007       &        0.005       &     0.062          \\
+AR(3) test \textit{p}-value   &       0.352        &   0.363            &      0.276         &    0.343           \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\). Standard errors in parentheses.}\\
+\multicolumn{5}{l}{\footnotesize Fishing season and area fixed-effect are included in all models.}\\
+\multicolumn{5}{l}{\footnotesize Robust standard errors are estimated using Arellano–Bond robust estimator.}\\
+\end{tabular}
+}

@@ -1,0 +1,36 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{8}{c}}
+\toprule
+                    &\multicolumn{4}{c}{Patrolling exogeneous}                      &\multicolumn{4}{c}{Patrolling endogeneous}                     \\\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+                    &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}   &\multicolumn{1}{c}{(4)}   &\multicolumn{1}{c}{(5)}   &\multicolumn{1}{c}{(6)}   &\multicolumn{1}{c}{(7)}   &\multicolumn{1}{c}{(8)}   \\
+\midrule
+ln(Distance patrolled near-shore)&       0.096***&       0.086***&       0.086***&       0.029   &       0.099** &       0.184***&       0.183***&       0.066   \\
+                    &     (0.026)   &     (0.026)   &     (0.026)   &     (0.032)   &     (0.042)   &     (0.049)   &     (0.049)   &     (0.056)   \\
+\addlinespace
+ln(Distance patrolled overland)&      -0.039*  &               &               &               &       0.006   &               &               &               \\
+                    &     (0.024)   &               &               &               &     (0.043)   &               &               &               \\
+\addlinespace
+ln(Density)         &       0.248***&       0.247***&       0.248***&      -0.030   &       0.206***&       0.208***&       0.202***&      -0.072   \\
+                    &     (0.065)   &     (0.065)   &     (0.065)   &     (0.108)   &     (0.057)   &     (0.064)   &     (0.064)   &     (0.092)   \\
+\addlinespace
+Regulation          &      -0.111   &      -0.133   &      -0.122   &      -0.243   &      -0.174   &      -0.119   &      -0.095   &      -0.137   \\
+                    &     (0.127)   &     (0.128)   &     (0.128)   &     (0.166)   &     (0.117)   &     (0.121)   &     (0.121)   &     (0.159)   \\
+\addlinespace
+Salinity (13 $\leq$ PSU $<$ 14)&               &               &      -0.318   &      -0.348   &               &               &      -0.331*  &      -0.307   \\
+                    &               &               &     (0.195)   &     (0.265)   &               &               &     (0.187)   &     (0.250)   \\
+\addlinespace
+Salinity (PSU $\geq$ 14)&               &               &      -0.635** &      -0.358   &               &               &      -0.559*  &      -0.230   \\
+                    &               &               &     (0.294)   &     (0.369)   &               &               &     (0.294)   &     (0.359)   \\
+\addlinespace
+Harvest ($z$-score)         &               &               &               &      -0.030   &               &               &               &      -0.017   \\
+                    &               &               &               &     (0.025)   &               &               &               &     (0.024)   \\
+\midrule
+Observations        &        1622   &        1622   &        1622   &         863   &        1622   &        1622   &        1622   &         863   \\
+\bottomrule
+\multicolumn{9}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\). Standard errors in parentheses. Salinity (PSU $<$ 13) is base.}\\
+\multicolumn{9}{l}{\footnotesize Fishing season and area fixed-effect are included in all models.}\\
+\multicolumn{9}{l}{\footnotesize Sea surface temperature abnormality is included as an interactive variable with closest cove FE's.}\\
+\multicolumn{9}{l}{\footnotesize Robust standard errors are estimated using Arellano–Bond robust estimator.}\\
+\end{tabular}
+}

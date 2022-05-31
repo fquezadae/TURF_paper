@@ -1,0 +1,36 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{c}}
+\toprule
+                    &\multicolumn{3}{c}{SST abnormality}            &\multicolumn{3}{c}{SST abnormality (within)}   \\\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+                    &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}   &\multicolumn{1}{c}{(4)}   &\multicolumn{1}{c}{(5)}   &\multicolumn{1}{c}{(6)}   \\
+\midrule
+ln(Distance patrolled near-shore)&       0.017   &       0.012   &       0.011   &       0.024   &       0.024   &       0.025   \\
+                    &     (0.022)   &     (0.022)   &     (0.022)   &     (0.022)   &     (0.022)   &     (0.022)   \\
+\addlinespace
+ln(Distance patrolled overland)&      -0.019   &               &               &      -0.001   &               &               \\
+                    &     (0.023)   &               &               &     (0.022)   &               &               \\
+\addlinespace
+ln(Density)         &       0.310***&       0.311***&       0.308***&       0.319***&       0.319***&       0.318***\\
+                    &     (0.034)   &     (0.034)   &     (0.034)   &     (0.031)   &     (0.031)   &     (0.031)   \\
+\addlinespace
+Regulation          &      -0.333***&      -0.344***&      -0.325***&      -0.344***&      -0.344***&      -0.330***\\
+                    &     (0.108)   &     (0.108)   &     (0.107)   &     (0.110)   &     (0.111)   &     (0.111)   \\
+\addlinespace
+Salinity (13 $\leq$ PSU $<$ 14)&               &               &      -0.218*  &               &               &      -0.130   \\
+                    &               &               &     (0.123)   &               &               &     (0.133)   \\
+\addlinespace
+Salinity (PSU $\geq$ 14)&               &               &      -0.395*  &               &               &      -0.308   \\
+                    &               &               &     (0.234)   &               &               &     (0.234)   \\
+\addlinespace
+Constant            &       0.069   &      -0.046   &       0.232   &      -0.236   &      -0.241   &      -0.056   \\
+                    &     (0.214)   &     (0.152)   &     (0.209)   &     (0.203)   &     (0.149)   &     (0.216)   \\
+\midrule
+Observations        &        1907   &        1907   &        1907   &        1905   &        1905   &        1905   \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\). Standard errors in parentheses. Salinity (PSU $<$ 13) is base}\\
+\multicolumn{7}{l}{\footnotesize Fishing season and area fixed-effect are included in all models.}\\
+\multicolumn{7}{l}{\footnotesize Sea surface temperature abnormality is included as an interactive variable with closest cove FE's.}\\
+\multicolumn{7}{l}{\footnotesize Robust standard errors are clustered at the fishers' organization-level.}\\
+\end{tabular}
+}

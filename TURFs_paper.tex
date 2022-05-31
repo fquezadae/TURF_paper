@@ -1,0 +1,809 @@
+%::::::::::::::::::::::::::::::
+%::: ENFORCEMENT AND TURFs  :::
+%::::::::::::::::::::::::::::::
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{lscape}
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{prop}{Proposition}
+\usepackage{nicefrac}
+\usepackage[inline]{enumitem}
+%\usepackage{siunitx}
+
+% ::: Apendix :::
+\usepackage[toc,page]{appendix}
+
+%% Author affiliation
+\usepackage{authblk}
+\usepackage{varwidth}
+%\renewcommand*{\Authsep}{, }
+%\renewcommand*{\Authand}{, }
+%\renewcommand*{\Authands}{, }
+\renewcommand*{\Affilfont}{\normalsize\normalfont}
+\newcommand\cites[1]{\citeauthor{#1}'s\ (\citeyear{#1})}
+%\renewcommand*{\Authfont}{\bfseries} 
+%\setlength{\affilsep}{1em}   
+
+% ::: Tables :::
+\usepackage{booktabs,multirow}
+%::::::::::::::
+
+% ::: Highlight :::
+\usepackage{soul,color}
+%:::::::::::::::::
+
+%::: Document style :::
+\usepackage{times}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\setstretch{1.5} 
+\geometry{left=1in,right=1in,top=1.25in,bottom=1.25in,headheight=127mm}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Monitoring and enforcement and collective property rights}
+\rfoot{\thepage}
+%\rhead{Quezada and Chan}
+\usepackage{subcaption}
+%::::::::::::::::::::::
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{External monitoring and enforcement and the success of collective property rights regimes}%\thanks{We would like to thank Rodrigo Lepe Zamora from DIRECTMAR for his responsiveness and insights on patrolling conducted by the Chilean Navy.}}
+
+%\author{}
+%\date{}
+\author[1]{Felipe J. Quezada}
+\author[2]{Nathan W. Chan}
+\affil[1]{Institute of Marine Sciences, University of California Santa Cruz.} 
+\affil[2]{Department of Resource Economics, University of Massachusetts Amherst.} 
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{abstract}  
+In this paper, we analyze how public monitoring and enforcement (M\&E) efforts affect the success of a collective property right. We develop a bioeconomic model to generate several theoretical predictions, which we test empirically by assembling and analyzing novel data on public patrolling and fishing activity in the Chilean abalone fishery. Consistent with our model, we find robust evidence that patrolling increases abalone stocks and harvest for nearby fishers' organizations. In our preferred (conservative) specifications, a 10\% increase in patrolling increases stock density by 0.9\% and harvest by 1.1\%, which translates roughly to an increase in annual revenues of 6,350 USD on average within a port captainship jurisdiction. Our work provides new empirical evidence on the determinants of success for collective property rights regimes, revealing the pivotal role that public M\&E can play in helping sustain these institutions. 
+
+\noindent \textbf{Key Words:} Common pool resources; collective property right; monitoring and enforcement; territorial use of right for fishing. \\\
+\noindent \textbf{JEL Codes:} Q22; K42; D71
+\end{abstract}
+
+
+%##################
+%## INTRODUCTION ##
+%##################
+\section{Introduction} \label{sec:Introduction}
+Common pool resources are prone to over-exploitation. Under open-access, users acting in self-interest will deplete the resource and dissipate economic rents  \citep{Gordon1954}. This grim result has been observed for wide-ranging resources, including fisheries, forests, and groundwater around the world. 
+One means for averting the so-called ``tragedy of the commons'' is to allocate individual property rights. However, an alternative solution is to allocate secure collective property rights for a group of users. This approach works in theory because users can coordinate to achieve the optimal group harvest level, and there are myriad examples of these principles translating into practice \citep{Ostrom1992}. Empirical studies have shown that collective property rights allocations have been successful in recovering fish stocks under territorial use rights for fishing (TURF) systems \citep{castilla1998, defeo2005, uchida2012turfs} and reducing deforestation under community forest management programs \citep{rasolofoson2015,santika2017}. Nevertheless, the success of collective property rights will depend on the ability to preclude outsiders from encroaching on the resource \citep{hornbeck2010}. 
+Because these institutions necessarily exclude some parties from accessing a valuable resource, they are vulnerable to encroachment from outsiders \citep{mishra2010, jarvis2016}.
+
+Therefore, monitoring and enforcement (M\&E) efforts are necessary to deter poachers and ensure sustainability of the resource.\footnote{Monitoring a common pool resource can include monitoring stock levels for conservation and administrative proposes, monitoring compliance of property rights owners, and monitoring illegal activity by outsiders. In this paper, we focus on the latter as we are concerned about deterrence. Enforcement entails the imposition of penalties for illegal use. 
+Monitoring and enforcement can be local or external. \emph{Local} M\&E is conducted by resource users, whereas \emph{external} M\&E is made by a government authorities.} 
+Prior research has shown that M\&E is crucial for successful resource management in state-owned or state-managed areas. For instance, M\&E is necessary for reducing deforestation in the Brazilian Amazon \citep{hargrave2013, borner2015} and protecting buffalo, elephants, and black rhinos in Tanzania's Serengeti National Park \citep{hilborn2006}. In marine contexts, M\&E has played a critical role in increasing the abundance of fish and coral reef in the Philippines' marine sanctuaries \citep{walmsley2003}, in the Great Barrier Reef in Australia \citep{davis2004}, in Italy's marine reserves \citep{guidetti2008}, and in Indonesia's Komodo National Park \citep{mangubhai2011}. 
+However, less is known about the relationship between external government M\&E and collectively held resources. In contrast to the examples above, these settings involve state and private actors with different, but complementary, roles. %On one hand, external M\&E on poaching activity will do little if use rights are unclear or if rights owners do not manage the resource well. On the other, sound management by user groups will not be sufficient without M\&E, and in practice, many non-state actors may lack the capacity for large-scale M\&E efforts. 
+External support for M\&E, together with adequate resource management by resource users, are essential elements to ensure the sustainability of the collective good \citep{davis2017}. User groups can contribute to monitoring their own resources, but in many cases, they remain reliant on additional government support as they may have limited capacity or power to prevent encroachment \citep{davis2017}. This is especially important in light of evidence that  local cooperation might be eroded within community-based management systems if there are no mechanisms for deterring poaching by the outsiders \citep{cudney2009}.
+
+In this article, we provide new evidence on how external M\&E can influence the success of a collective property rights program. Specifically, we construct a bioeconomic model to generate theoretical predictions, and we test these hypotheses using an original data set for the Chilean abalone fishery. We examine the relationship between external M\&E (i.e., patrolling effort by the Chilean navy) and two outcomes (stock density and harvest) under a collective property rights program. Our rich and novel data set affords us unique insights into the crucial role of external government M\&E, with important findings that generalize beyond the Chilean context.
+
+Our work complements and extends the literature that studies enforcement on collective property rights for common-pool resource management. Most empirical research on this matter has focused on case studies using small samples lacking sufficient spatial variation to conduct robust analysis, a significant drawback considering the theoretical relevance of spatial dynamics on M\&E effectiveness \citep{robinson2010}. For instance, in marine resources, studies have focused on comparing outcomes for different common pool resource regimes (e.g., TURFs with low vs. high enforcement, open-access vs. no-take areas) in a particular region \citep{Gelcich2012, Manriquez2001}. Our study improves on these efforts by leveraging a large panel with more than three hundred areas distributed along the Chilean coast over fifteen years (2003-2018). 
+
+Acknowledging the challenges incumbent in small case studies, there have been efforts to exploit larger sample sizes by comparing similar policy instruments between countries to understand how differences in the design affect outcomes \citep{gibson2005, chhatre2008, pagdee2006}. However, a key challenge for this cross-sectional approach is that nations have fundamentally different institutions, legal systems, and cultures, raising issues of omitted variables bias and therefore complicating inference. Against this backdrop, our paper is unique in focusing on a single policy instrument implemented in one country, which evades omitted variables problems that can arise from differences in institutions or differences in policy design. In our setting, legal disincentives (i.e., fines) and the probability of arrest, prosecution, and conviction are all set under a common policy, which facilitates cleaner identification of the effect of M\&E. To the extent that cross-sectional variation does exist in these key variables, we can directly control for them through panel data econometrics. Another shortcoming of prior work is that  variation in the degree of M\&E has been mostly incorporated as a binary variable %\citep{auriemma2014,Gelcich2012,benyishay2017,arima2014}
+or, in the best case, as an index or score constructed through qualitative methods.%\citep{walmsley2003,chhatre2008,guidetti2008}.
+\footnote{Another approach has been to recover the probability of detection using surveys  \citep{furlong1991,kuperan1998, ali2010}. However, this subjective probability is most likely to be biased as agents will report higher probabilities of detection where more violations occur \citep{hatcher2000}.} In contrast, we use navy patrolling data as a direct measure of M\&E effort and illuminate the relationship between M\&E and fishery outcomes. At the same time, we recognize that endogeneity is likely to be an issue when using patrolling data, leading us to delve deeper with an ancillary analysis. We tackle the potential endogeneity of patrolling directly in a dynamic panel framework. We find that accounting for endogeneity appears to inflate rather than nullify the effect of patrolling on stock density, so our baseline estimates are, if anything, conservative. While this additional analysis cannot provide ironclad proof on the direction of causality, it is consistent with both our causal interpretation of the empirical estimates and the initial theory that we have laid out.
+
+In short, our unique panel data affords us rare insights into these long-standing questions surrounding external M\&E of collective property rights. 
+We find a robust positive relationship between patrolling effort and stock density and harvest, in line with the predictions of our bioeconomic model. 
+In our preferred (conservative) specifications, a 10\% increase in near-shore patrolling is associated with an increase in abalone stock density by 0.9\% and harvest by 1.1\%. A back-of-the-envelope calculation shows that increasing nearshore patrolling effort by 10\% would increase annual revenues 6,350 USD on average within a port captainship jurisdiction. These results are a testament to the importance of public M\&E in resource conservation and for the livelihoods of resource users.
+
+The remainder of the paper is organized as follows: Section \ref{sec:TURF program in Chile} provides background on the TURF program implemented in Chile. In Section \ref{sec:monitoring}, we describe the monitoring and enforcement efforts of the Chilean navy. In Section \ref{sec:Theoretical model}, we develop our theoretical model and generate testable predictions. In Section \ref{sec:Data}, we describe the data used for our estimation. Section \ref{sec:empirical} discusses our empirical strategy. Section \ref{sec:Results} presents the results of the estimations, and we conclude in Section \ref{sec:Conclusion}.
+
+
+%#############################
+% TURF in Chile: Loco fishery 
+%#############################
+
+\section{TURF program in Chile: Loco fishery} \label{sec:TURF program in Chile}
+TURF programs have been implemented in different countries as a mechanism to enhance the sustainability of small-scale fisheries. 
+Some examples are TURF programs implemented in developing countries such as Indonesia, Sri Lanka, and Vietnam \citep{quynh2017}, as well as in developed countries such as Korea and Japan \citep{Wilen2012}. 
+In Chile, this system is known as the Management and Exploitation Area for Benthic Resources (MEABR). It was implemented in 1997 to overcome the overexploitation of Chilean abalone or loco (\textit{concholepas concholepas}), one of the primary benthic resources harvested by small-scale fishers along the Chilean coast. This program came after a total closure of the fishery in 1990-1991 and the unsuccessful implementation of a total allowable catch (TAC) system in 1992 \citep{Gonzalez1996}. Both policies failed to achieve their goals due to the lack of capacity to enforce them by the authorities \citep{jarvis2016}.
+
+Under the TURF program, the Chilean Undersecretary of Fisheries (SUBPESCA) has the legal authority to grant exclusive space-based property rights to artisanal fishers' organizations (i.e., user groups) to harvest marine resources within a TURF (i.e., a defined geographic area), giving them an incentive to manage the area sustainably \citep{Gelcich2017, jarvis2016}.\footnote{In fisheries, the rights-based approach can be space-based rights (e.g., TURFs) or species-based rights. According to \cite{Wilen2012}, under a space-based rights system, it is expected that property right owners can coordinate and solve different space externalities such as metapopulation externalities (i.e., heterogeneity in population distribution across space), predator and prey linkage, and habitat destruction externalities (e.g., gear impact on ecosystem habitat). Moreover, they can coordinate a single species' harvests over time and space to achieve optimal extraction and stock levels. Conversely, an example of species-based rights is Individual Transferable Quotas (ITQ). Under ITQ, an individual can harvest a share of the total allowable catch assigned to a particular species determined by the authorities. The main drawback of species-based systems is that users cannot internalize space externalities \citep{Wilen2012}.} Each TURF is associated with a particular cove.\footnote{Coves are called \textit{caletas} in Spanish.  Fishers' communities are located close to coves, and we will use these terms interchangeably.} Coves are, in turn, part of a larger geographic unit called a commune. Communes comprise the third level of administrative division in Chile, with the first and second levels being regions and provinces, respectively. More than one TURF may operate in a cove, and there may be multiple coves within a commune. 
+
+Fishers' organizations are registered groups formed by licensed artisanal fishers to apply for a TURF. In some cases, organizations granted with TURF had already existed as a local fishing cooperative in well-organized communities \citep{Wilen2012}. These communities pushed the government to create a new property rights system back in the early 1990s \citep{jarvis2016}. TURFs are co-managed between fishers' organizations and Chilean authorities, where the responsibility for the sustainable use of the resource is shared by both agents \citep{Gelcich2013}. Fishers' organizations can be granted more than one TURF, but individual fishers cannot be a member of more than one fishers' organization. 
+
+Some formal steps are required to be granted a TURF. First, fishers' organizations have to submit a proposal to  SUBPESCA identifying the area of interest. SUBPESCA reviews this proposal verifying whether the area conflicts with other coastline uses. After approval, the area is declared under the MEABR regime, and any fishers' organization can be granted exclusive access to the area. During the application process, fishers' organizations must contract with a biological consultant to conduct a baseline study. These consultants must also conduct a yearly follow-up (in some cases every two years), including a direct assessment of the stock for each benthic species harvested in the area \citep{Gelcich2009}. No human restocking is allowed. The stock assessment is used by authorities to determine the annual TAC for the corresponding area. Therefore, TURFs in Chile works as an area-based catch share programs. The first TURFs to be allocated to fisher's organizations were located around historically productive areas that were overexploited. As a consequence, the first years of the program were focused on stock rebuilding \citep{Wilen2012}. 
+
+The implementation of the MEABR system has been considered a success \citep{castilla2001}. Overall, targeted species within TURFs have increased significantly in abundance and size compared to open-access sites \citep{Gelcich2009}.\footnote{There is heterogeneity in TURF success depending on the targeted species. For instance, a TURF system for the surf clam \textit{Mesodesma donacium} in Chile failed after three years of its implementation due to its high stock variability  \citep{aburto2013, aburto2014}.} Data on harvest decisions have shown that TURFs have been managed in a sustainable way \citep{jarvis2016}. However, results have varied across TURFs. Some fishers' organizations have not been able to sustain their areas and  were thus forced to return or abandon them \citep{jarvis2016}. Chilean authorities have also taken areas back due to non-compliance with the objectives of the program \citep{Gelcich2017}, and some areas have failed to constitute, most likely due to conflicts between fishers' organizations that applied to the same TURF \citep{jarvis2016}.
+
+Productivity might explain these differences \citep{jarvis2016} as historically productive areas have been considered as the most successful TURFs, while historically unharvested areas (or areas harvested by outsiders with mobile fleets) have been more problematic \citep{Wilen2012}. Moreover, differences in harvest cost, due to weather and geographical conditions, or the inability to organize and maintain a group of users could be affecting the profitability of an area. Another explanation, and our main hypothesis of this study, is that public external government M\&E plays an important role in the success of a TURF. M\&E is required for a successful TURF \citep{Wilen2012}. While monitoring can be local or external, enforcement is mostly external (i.e., government). Fishers' organizations can monitor their area and apply penalties to members who do not follow the organization's rules, but they are not allowed to enforce their rights legally \citep{jarvis2016}. The government can contribute to monitoring efforts, as well. Generally, government monitoring takes place through the navy and the Chilean National Fisheries and Aquaculture Service (SERNAPESCA). 
+
+If M\&E is indeed effective in deterring illegal fishing, then we should expect to have better stock conditions within a TURF \citep{samoilys2007, davis2015}. In equilibrium, harvest should also increase due to improved health of the population. Case study evidence that corroborates this hypothesis has been reported in \cite{Gelcich2012}. Otherwise, unmitigated poaching may threaten the long-run sustainability of the fishery.  
+
+In Chile, illegal fishing has been cited by resource users as the main problem in managing a TURF \citep{Gelcich2017, jarvis2016}.\footnote{Illegal fishing includes extraction within a TURF by outsiders, unreported extraction by TURF members, extraction under minimum legal size ($<10$cm for loco), extraction during fishing closures and, in the case of the loco, extraction in open-access areas \citep{oyanedel2018}. According to \cite{gonzalez2006}, illegal harvest might account for at least 50 percent of total Chilean catch of loco. However, it seems that illegal fishing is higher in non-TURFs areas (where loco harvesting is banned) than in TURFs \citep{jarvis2016}.}  In some areas, violence has erupted between TURF members and poachers. One of the most famous cases happened in November 2015 when a ``loco pirate'' from Ancud was killed in Caleta Estaquilla, a rural community close to Puerto Montt. He was killed by TURF members who were protecting their area from poaching in the so-called ``loco war'' \citep{galindo2015, galindo2016}. The problem of poaching by outsiders within TURF boundaries can be considered an unintended consequence of implementing the MEABR system after loco harvest was banned from non-TURF areas in 2000. Under this policy, many fishers were excluded from legal local harvest, but they have continued to harvest illegally in the now-banned areas or areas managed by other groups \citep{jarvis2016}.
+
+TURFs have varying levels of protection. Some areas are more challenging to monitor than others. For instance, the navy's surveillance might vary according to how close a TURF is to a port captainship, and might vary between port captainships depending on its monitoring capacity. Regarding surveillance by resource users, monitoring cost may differ according to how far away the TURF is located from the coast \citep{davis2015,davis2017}. Figure \ref{fig:map} provides an illustrative example of how TURFs, port captainships, and coves are located in space for Los Lagos region, a subset of our study sample.
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.975\textwidth]{Figures-ch1/map_patrolling.png}
+\end{center}
+\caption{TURFs, port captainships, and coves in Los Lagos region.\label{fig:map}}
+\end{figure}
+The size of a TURF and features of the adjacent landscape  as well as weather conditions may also affect both external and local monitoring costs \citep{Wilen2012}. There might also be interdependence between external monitoring and enforcement and local monitoring. Using survey methods, \cite{davis2017} found that fishers might stop monitoring because they perceived that external enforcement is not effective.\footnote{Other explanations for why fishers might stop protecting their area are lack of the capacity to monitor or that fishers may underestimate the benefits from M\&E \citep{Gelcich2017}. Using a simulation-based approach, \cite{davis2015} found that M\&E of TURFs have benefits exceeding costs. These benefits are attributed to the prevention of poaching in the area, which increases stock abundance. However, fishers might not be attributing this increase in abundance to monitoring.} Almost a third of all active TURFs in Chile are not monitored adequately by the corresponding fishers' organization \citep{gonzalez2013}, which is one of the first steps toward TURF abandonment \citep{Gelcich2017}. In this environment, external government M\&E can play a crucial role.
+
+% Fishers' organizations face a dual coordination problem of deciding  harvest and monitoring effort. As \cite{Wilen2012} emphasizes, the success of a TURF also depends on the degree to which resource users adopt internal rules and coordination mechanisms to align fishers incentives to achieve efficiency. TURF members are required to coordinate monitoring effort to deter poaching, but also they have to create mechanisms to encourage compliance within TURF members (i.e. self-governance). For instance, some fishers groups sanction their members if they are found not following organization rules (e.g. failing to carrying out border patrolling) \citep{jarvis2016}.\footnote{Severe sanction, such as suspension or expulsion, are imposed if a member is found poaching illegally within TURF.} 
+
+In summary, a TURF's success will depend on the effectiveness of internal governance to solve the coordination problem of harvesting and monitoring \citep{Wilen2012, jarvis2016}, but also on the degree of government support and the natural and economic conditions of an area. Our empirical approach seeks to estimate the impact of public M\&E while controlling for these other factors.
+
+\section{Monitoring and enforcement}\label{sec:monitoring}
+The Chilean navy and SERNAPESCA both make important contributions to monitoring and enforcement of TURFs.
+
+The Chilean navy is organized in five navy zones (\textit{zona naval} in Spanish): Valpara\'iso (first zone), Talcahuano (second zone), Punta Arenas (third zone), Iquique (fourth zone), and Puerto Montt (fifth zone). Each zone is composed of port authorities (\textit{gobernac\'ion mar\'itima} in Spanish), and each port authority is composed of port captainships (\textit{capitan\'ias de puerto} in Spanish).\footnote{Information for this section was obtained from personal communication with maritime authorities from the Chilean navy.}
+
+Monitoring TURFs is an essential component of naval patrolling. However, patrolling by the navy also involves other surveillance and enforcement tasks, such as the surveillance and enforcement of pelagic fisheries.
+%
+The patrolling effort is divided into terrestrial patrolling, where the effort is conducted by port captainship, and patrolling by units afloat (i.e., boats). %"Port captainships carried out the activity of monitoring and enforcement through a maritime patrol composed by personnel of the maritime policy." 
+Additionally, terrestrial patrolling can be divided into two subgroups: overland and near-shore patrolling. Overland patrolling is mainly conducted by the maritime authority through terrestrial vehicles to inspect landing areas. Near-shore patrolling occurs on Zodiac boats. 
+Under this latter subcategory% and patrolling by units afloat
+, the maritime police's focus is to inspect if a fishing vessel complies with the regulation. The fishing vessels and artisanal fishers must be listed in the ``national artisanal fishery registry'' (\textit{registro pesquero artesanal} in Spanish), and they are only allowed to harvest species with which they have registered. For all these categories, the procedures about how inspection must be conducted are established by the Chilean Directorate General of Maritime Territory and Merchant Marine (DIRECTMAR).
+
+The patrolling effort is decided in advance. For each location or species, the port authorities and SERNAPESCA %as they have better information about resources condition 
+produce a ``local risk profile'' that indicates how likely an area/species is to become over-exploited or prone to poaching. Local risk profiles are elaborated once per month, and they allow the port of authorities to decide the optimal allocation of patrolling effort in their jurisdictions to be conducted through the port of captainships. In practical terms, overland patrolling occurs more often where illegal landing is more likely to occur, while near-shore patrolling % and patrolling by units afloat 
+occurs more often where poaching or over-harvest have been observed. However, if the navy receives a report about illegal fishing, a patrol vessel could be sent to prosecute the suspect. M\&E operational strategies are kept confidential%"There is an “intelligence work” when monitoring and enforcement effort and distribution is decided."
+, making it harder for poachers to predict monitoring. Nevertheless, we are more likely to observe significant monitoring activity during specific periods (e.g., during total closure of the fishery).%\footnote{Moreover, in some coves, criminal organizations have an extensive network of informants%(e.g., announcing through the radio that the maritime police have left a port captainship to start an inspection)
+%, making it easier for poachers to know when an operation is about to start.}
+
+
+We expect that a higher level of patrolling effort increases the perceived probability of detection and, therefore, reduces the probability of poaching activity, leading to higher levels of stock \citep{hatcher2000}. Figure \ref{fig:patrolling} shows a weak positive correlation between stock density and patrolling effort, which provides suggestive evidence for this hypothesis. However, the relationship shown in this figure is not causal and may instead be reflective of endogeneity.
+\begin{figure}
+\begin{center}
+\includegraphics[width=1\textwidth]{Figures-ch1/patrolling_scatter.pdf}
+\end{center}
+\caption{Patrolling effort v/s stock density. \label{fig:patrolling}}
+\end{figure}
+Our empirical strategy seeks to address several concerns about endogeneity and omitted variables to permit cleaner inference.
+
+%In the case of SERNAPESCA, M\&E effort is made either independently through their 49 offices across the country or together with the help other agencies: police for land inspections, navy for maritime inspections, and investigation police for inspection in specific places. % Our data include enforcement activity conducted independently and together with other agencies.
+%The patrolling effort is carried out for different purposes, such as controlling access to an area, verifying compliance with the quota assigned, and verifying compliance with the legal minimum size, the total closure of a fishery, and the technology used for fishing. SERNAPESCA allocates monitoring effort in areas with higher levels of activity. Moreover, they concentrate their efforts where landings occur as it is more effective in deterring illegal activity. During 2018, SERNAPESCA conducted approximately 40\% of the inspections on landing sites \citep{sernapesca2018}. 
+
+%###########
+%## Model ##
+%###########
+
+\section{Theoretical model}
+\label{sec:Theoretical model}
+
+To derive our hypotheses, we develop a static renewable resource exploitation model. As a novel feature, we combine private property elements with an open-access game that includes insiders who own the resource and outsiders who behave as though the resource is managed under an open-access regime. 
+
+\subsection{Model Fundamentals}
+As a functional form for the growth rate function, we use the logistic function  \citep{schaefer1957} 
+\begin{equation}
+G(S)=gS\left(1-\frac{S}{K}\right),
+\end{equation}
+where $S$ is the population stock, $g$ is the population's intrinsic growth rate, and $K$ is the population's carrying capacity, which depends on environmental conditions such as nutrients and temperature. This function successfully characterizes the growth of non-migratory species \citep{Perman2003} and thus applies well for loco given its low rate of migration. 
+
+Our setting has two types of agents, insiders and outsiders. Insiders are the spatial property rights owners (i.e., TURF members). Outsiders are agents who are legally forbidden from fishing in the TURF area, although they may elect to poach. Insiders' total harvest is given by $H_i=qSE_i$, where $E_i$ is the aggregate harvest effort made by insiders and $q$ is the catch coefficient, or catchability.\footnote{Catchability is defined as the probability of catching a fish per unit of effort. The catch coefficient gives us the relation between the stock $S$ and harvest per unit of effort, $\nicefrac{H_i}{E_i}=qS$.} Similarly, outsiders' total poaching is given by $H_o=qSE_o$, where $E_o$ is the aggregate harvest effort made by outsiders. For simplicity, we assume the same harvest function for insiders and outsiders.\footnote{In general, this function could differ. For instance, \cite{Bulte2003} analyzes poaching behavior using a harvest function Holling Type III. He shows how regulation would change in this setting due to the existence of multiple equilibria and hysteresis.} The stock evolves according to the equation of motion $\dot{S}=G(S)-H_i-H_o$. Using the functional forms that we have assumed, the equation is as follows
+\begin{equation}
+\dot{S}=gS\left(1-\frac{S}{K}\right)-qS(E_i + E_o).
+\end{equation}
+Fishing revenue is given by $pH_j$, where $p$ is a competitive price of the resource. Fishing costs are given by $C=wE_j$, where $w$ is the marginal cost of effort and $j\in \{i,o\}$.
+
+\subsection{Insiders' maximization problem}
+We assume that the TURFs act as a single collective entity.\footnote{This assumption simplifies exposition of the theory and offers a clearer foundation for proceeding toward our empirical question: how does M\&E affect TURF outcomes? As noted in our introduction, one potential \emph{mechanism} for such a relationship is that M\&E may foster better cooperation within the TURF. However, we abstract from such considerations here for clarity. Including an explicit interaction between M\&E and cooperativeness would necessitate more notation and machinery without altering the final qualitative predictions of the theory. We also assume that M\&E is only conducted by external agencies (thus excluding locally directed M\&E efforts) for the same reason.} Insiders will maximize net benefits as a group choosing their optimal level of effort $E_i$ subject to the stock level in equilibrium where harvest is equal to the growth rate of the stock, $\dot{S}=0$, in steady-state equilibrium. 
+%\begin{equation}
+%S= K \left(1-\frac{q}{g}(E_i + E_o)\right) \label{eq:stock} 
+%\end{equation}
+In other words, we are assuming that insiders focus their efforts on sustainable harvest. The optimization problem is the following
+\begin{equation*}
+\begin{aligned}
+& \underset{E_i}{\text{maximize}}
+& & pqSE_i-wE_i  \\
+& \text{subject to}
+& & S= K \left(1-\frac{q}{g}(E_i + E_o)\right), \\
+& & & E_i \geq 0. 
+\end{aligned}
+\end{equation*}
+Solving the optimization problem gives us %the following condition
+% \begin{align*}
+%   (a) \quad & pqK  - \frac{q^2}{g} p K \left( 2E_i + E_o \right) - w - \lambda \leq 0; \qquad E_{i} \geq 0; \\ \quad & \qquad E_{i}\left[pqK  - \frac{q^2}{g} p K \left( 2E_i + E_o \right) - w - \lambda \right]=0. \\
+%   (b) \quad &  E_{i} \geq 0; \qquad \lambda \geq 0; \qquad \lambda E_{i} = 0.
+% \end{align*}
+% where $\lambda$ is the Lagrangian multiplier. If $E_{i}>0$, then $\lambda=0$ and the optimal condition is 
+% \begin{equation*}
+% pqK  - \frac{q^2}{g} p K \left( 2E_i^* + E_o \right) - w = 0
+% \end{equation*}
+% Solving for $E_i^*$, 
+the insiders' best-response function \begin{equation}
+E_i^* \equiv f_i\left(g,q,w,p,K,E_o\right) = \frac{g}{2q} \left( 1 - \frac{w}{pqK} \right) - \frac{E_o}{2}. \label{eq:effort} 
+\end{equation}
+Note that when outsiders increase effort, the insiders' optimal level of effort is reduced, $\nicefrac{d f_i}{d E_o} < 0$. Substituting (\ref{eq:effort}) in $S$ we obtain the stock level in equilibrium conditional on poaching
+\begin{equation}
+S^{*}= \frac{pqK+w}{2pq} - \frac{qK}{2g} E_o \label{eq:stock_star}
+\end{equation}
+where $\nicefrac{d S^*}{d E_o} < 0$. Additionally, we can obtain the equilibrium level of harvest conditional on poaching using (\ref{eq:effort}) and (\ref{eq:stock_star})
+%\begin{align*}
+%H^{*}_i & = q \left( \frac{pqK+w}{2pq} - \frac{qK}{2g} E_o \right) \left( \frac{g}{2q} \left( 1 - \frac{w}{pqK} \right) - \frac{E_o}{2} \right) \\
+%H^{*}_i & = \left( q \frac{pqK+w}{2pq} - q \frac{qK}{2g} E_o \right) \left( \frac{g}{2q} \left( 1 - \frac{w}{pqK} \right) - \frac{E_o}{2} \right) \\
+%H^{*}_i & = q \frac{pqK+w}{2pq} \frac{g}{2q} \left( 1 - \frac{w}{pqK} \right) - q \frac{qK}{2g} E_o \frac{g}{2q} \left( 1 - \frac{w}{pqK} \right) - \left( q \frac{pqK+w}{2pq} - q \frac{qK}{2g} E_o \right)\frac{E_o}{2} 
+%H^{*}_i & = \frac{g}{4} \left( K-\frac{w^2}{p^2q^2K} \right) - \frac{qK}{2g} E_o \frac{g}{2} \left( 1 - \frac{w}{pqK} \right) - q \frac{pqK+w}{2pq}\frac{E_o}{2} + q \frac{qK}{2g} E_o \frac{E_o}{2} \\
+%H^{*}_i & = \frac{g}{4} \left( K-\frac{w^2}{p^2q^2K} \right) - \frac{qKE_o}{4}  \left( 1 - \frac{w}{pqK} \right) - E_o \frac{pqK+w} {4p} + \frac{q^2K}{4g} E_o^2 \\
+%\end{align*}
+%H^{*}_i & = \frac{g}{4} \left( K-\frac{w^2}{p^2q^2K} \right) - \left[ \frac{qK}{4}  \left( 1 - \frac{w}{pqK} \right) + \frac{pqK+w} {4p} \right] E_o + \frac{q^2K}{4g} E_o^2 \\
+%H^{*}_i & = \frac{g}{4} \left( K-\frac{w^2}{p^2q^2K} \right) -  \frac{qK}{2} E_o + \frac{q^2K}{4g} E_o^2 
+%\end{align*}
+%\begin{align*}
+%\alpha G(S^*) & = \alpha g \left[ \frac{pqK+w}{2pq} - \frac{qK}{2g} E_o \right] \left(1-\frac{1}{K} \left[ \frac{pqK+w}{2pq} - \frac{qK}{2g} E_o \right] \right) \\
+%\alpha G(S^*) & = \alpha g \frac{pqK+w}{2pq}-\alpha g\frac{pqK+w}{2pq}\frac{1}{K} \left[ \frac{pqK+w}{2pq} - \frac{qK}{2g} E_o \right] - \alpha g \frac{qK}{2g} E_o  + \alpha g \frac{qK}{2g} E_o  \frac{1}{K} \left[ \frac{pqK+w}{2pq} - \frac{qK}{2g} E_o \right] \\
+%\alpha G(S^*) & = \alpha g \frac{pqK+w}{2pq}-\frac{pqK+w}{2pq}\frac{\alpha g}{K} \left[ \frac{pqK+w}{2pq} - \frac{qK}{2g} E_o \right] - \frac{\alpha qK}{2} E_o  + \frac{\alpha q}{2} E_o   \left[ \frac{pqK+w}{2pq} - \frac{qK}{2g} E_o \right]
+%\\
+%\alpha G(S^*) & = \alpha g \frac{pqK+w}{2pq}-\frac{pqK+w}{2pq}\frac{\alpha g}{K} \left[ \frac{pqK+w}{2pq} - \frac{qK}{2g} E_o \right] + \frac{\alpha}{4} \left[ \frac{w-pqK}{p} \right] E_o  - \frac{\alpha q^2K}{4g} E_o^2
+%\\
+%\alpha G(S^*) & = \alpha g \frac{pqK+w}{2pq}-\frac{pqK+w}{2pq}\frac{\alpha g}{K} \frac{pqK+w}{2pq} + \frac{pqK+w}{2pq}\frac{\alpha g}{K} \frac{qK}{2g} E_o  + \frac{\alpha}{4} \left[ \frac{w-pqK}{p} \right] E_o  - \frac{\alpha q^2K}{4g} E_o^2
+%\\
+%\alpha G(S^*) & = \alpha g \frac{pqK+w}{2pq}-\frac{pqK+w}{2pq}\frac{\alpha g}{K} \frac{pqK+w}{2pq} + \frac{\alpha w}{2p} E_o  - \frac{\alpha q^2K}{4g} E_o^2
+%\\
+%\alpha G(S^*) & = \alpha g \frac{pqK+w}{2pq}\left[ 1 - \frac{pqK+w}{2pqK} \right] + \frac{\alpha w}{2p} E_o  - \frac{\alpha q^2K}{4g} E_o^2
+%\\
+%\alpha G(S^*) & = \frac{\alpha g\left(p^2q^2K^2+w^2\right)}{4p^2q^2 K} + \frac{\alpha w}{2p} E_o  - \frac{\alpha q^{2} K}{4g} E_o^2
+%\end{align*}
+\begin{equation}
+H^{*}_i= \frac{g}{4} \left( K-\frac{w^2}{p^2q^2K} \right) -  \frac{qK}{2} E_o + \frac{q^2K}{4g} E_o^2 
+\label{eq:harvest}
+\end{equation}
+Note that if poaching is equal to zero, $E_i^*$, $S^*$, and $H_i^*$ are reduced to the same optimal solution that we find in a static private-property model without outsiders \citep{Perman2003}.
+
+Harvest is usually subject to a maximum quota restriction set by the authorities. This quota can take the form $Q=\alpha S^{*}$, where $\alpha$ is a positive parameter between $0$ and $1$. Assuming that insiders comply with quota level, harvests will be determined by $H^{**}_i=\min\left( H^*,\alpha S^* \right)$. 
+%\begin{equation}
+%\alpha G(S^*) = \frac{\alpha g}{4}\left( K - \frac{w^2}{p^2q^2K}\right) + \frac{\alpha w}{2p} E_o  - \frac{\alpha q^{2} K}{4g} E_o^2 \label{eq:quota}
+%\end{equation}
+%\begin{equation}
+%H^{**}_i=\min\left( \frac{g}{4} \left[ K-\frac{w^2}{p^2q^2K} \right] -  \frac{qK}{2} E_o + \frac{q^2K}{4g} E_o^2, \frac{\alpha g}{4}\left( K - \frac{w^2}{p^2q^2K}\right) + \frac{\alpha w}{2p} E_o  - \frac{\alpha q^{2} K}{4g} E_o^2 \right)
+%\end{equation}
+The magnitude of the effect of poaching on insiders' harvest will depend on whether the quota is binding or not. However, in either case, insiders' harvest will decrease in the amount poached by outsiders.  
+
+In the simple case when the quota is binding, outsiders' effort effect of insiders' harvest is
+\[\frac{d H_i^{**}}{d E_o}=\alpha \frac{d S^*}{d E_o} < 0.\]
+If the quota is not binding, then the effect of outsiders effort on insiders harvest is as follows
+\[\frac{d H_i^*}{d E_o}= \frac{qK}{2g} \left(qE_o - g \right) \lessgtr 0. \] 
+Because insider effort is non-negative ($E_i^*\geq0$), we can derive from \eqref{eq:effort} that $E_0\leq \nicefrac{g}{q}-\nicefrac{wg}{pq^2K} < \nicefrac{g}{q}$ and $\nicefrac{d H_i^*}{d E_o}<0$.
+Thus, in either case, we predict that insiders' harvest will be decreasing in outsiders' effort.
+%If $E_o<g2w/q2pK$, then $\frac{\partial H_i^*}{\partial E_o}<0$. Note that $g/q < (g/q)(2w/2pK)$. Therefore, if $E_o<g/q$, then $E_o<(g/q)(2w/2pK)$ and ${\partial H_i^*}/{\partial E_o}<0$ no matter quota is biding or not.
+ 
+\subsection{Poaching decision}
+Outsiders will maximize net benefits choosing their optimal level of effort $e_{oj}$. This  maximization problem differs from the insiders' maximization problem as outsiders maximize benefits individually. Moreover, outsiders face an exogenous fixed per unit fine $\phi$ if they are caught poaching with probability $\pi(m)$. Thus, $\pi(m)\phi$ is the expected fine per unit of poaching. This probability, $\pi(m)$, is the probability of detection and punishment which depends on M\&E $m$: $\nicefrac{d \pi}{d m} > 0$, $\nicefrac{d^2 \pi}{d m^2} < 0$. %Distance has an important role in the cost of implementing monitoring, as it is harder for both resource users and enforcement authorities to inspect areas when they are farther away \citep{davis2015}. The authority's presence may also affect the perception that poachers have of enforcement capacity (i.e., probability of detection and punishment). 
+To facilitate clear exposition, we assume that M\&E is exogenous to the level of stock or poaching. Appendix \ref{app:endog} offers a fuller treatment by endogenizing M\&E. %Note that the marginal cost of effort for outsiders, $w(D_l)$, is the same for insiders. Thus, we are assuming that outsiders are located in the same local community as insiders.
+
+The optimization problem is the following
+\begin{equation*}
+\begin{aligned}
+& \underset{e_{oj}}{\text{maximize}}
+& & \left(p-\pi(m) \phi\right) qSe_{oj}-we_{oj},  \\
+& \text{subject to}
+& & e_{oj} \geq 0. 
+\end{aligned}
+\end{equation*}
+Solving the optimization problem and assuming 
+% gives us the following conditions
+% \begin{align*}
+%   (a) \quad & \left(p-\pi(m) f\right) qS - w - \lambda \leq 0; \qquad e_{oj} \geq 0; \qquad e_{oj}\left[\left(p-\pi(m) f\right) qS - w - \lambda \right]=0. \\
+%   (b) \quad &  e_{oj} \geq 0; \qquad \lambda \geq 0; \qquad \lambda e_{oj} = 0.
+% \end{align*}
+% If 
+$e_{oj}>0$, %then $\lambda=0$ and 
+the optimal condition is 
+\[
+\left[\left(p-\pi(m) \phi\right) qS - w \right]e_{oj} =0
+\]
+Outsiders will earn zero profits, a well-known result under open-access conditions. %Multiplying both sides by $n_o$, the total number of outsiders, and 
+Assuming that $\dot{S}=0$, we obtain outsiders' best-response function
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%OUTSIDERS DO NOT CONSIDER THEIR ACTION ON STOCK WHEN MAXIMIZE, BUT THEIR BEST RESPONSE IS AFFECTED.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{equation}
+%\dot{E_o}=\delta \left(\left(p-\pi f \right) q S E_o -w E_o \right)=0
+%\end{equation}
+%\begin{equation}
+%\dot{E_o}=\delta E_o \left(\left(p-\pi f \right) q S -w  \right)=0
+%\end{equation}
+%\begin{equation}
+%\left(p-\pi f \right) q S =w
+%\end{equation}
+%\begin{equation*}
+%\left(p-\pi f \right) q K \left(1-\frac{q}{g}(E_i + E_o)\right) =w
+%\end{equation*}
+%\begin{equation*}
+%\left(\left(p-\pi f \right) q K -\left(p-\pi f \right)   \frac{q^2K}{g}(E_i + E_o)\right) =w
+%\end{equation*}
+%\begin{equation*}
+%\left(p-\pi f \right) q K -\left(p-\pi f \right)   \frac{q^2K}{g}(E_i + E_o) =w
+%\end{equation*}
+%\begin{equation*}
+%q K - \frac{q^2K}{g}(E_i + E_o^*) =\frac{w}{\left(p-\pi f \right)}
+%\end{equation*}
+%\begin{equation*}
+%q K - \frac{q^2K}{g}E_i - \frac{q^2K}{g} E_o^* =\frac{w}{\left(p-\pi f \right)}
+%\end{equation*}
+%\begin{equation*}
+%q K - \frac{q^2K}{g}E_i - \frac{w}{\left(p-\pi f \right)} = \frac{q^2K}{g} E_o^*
+%\end{equation*}
+%\begin{equation*}
+%\frac{gq K}{q^2K} - \frac{gq^2K}{q^2Kg}E_i - \frac{gw}{q^2K\left(p-\pi f \right)} = E_o^*
+%\end{equation*}
+\begin{equation*}
+e_{oj}^*=\frac{g}{q} - \left(E_i + E_o^{-j}\right) - \frac{gw}{q^2K\left(p-\pi\left(m\right) \phi \right)}  
+\end{equation*}
+where $E_o^{-j}=\sum_{i\neq j}e_{oi}$. If all outsiders are identical
+\begin{equation}
+E_o^*\equiv f_o\left(g,q,E_i,w,K,p,m,\phi\right)=\frac{g}{q} - E_i - \frac{gw}{q^2K\left(p-\pi\left(m\right) \phi \right)}.  \label{eq:eo_equil}
+\end{equation}
+%\begin{equation*}
+%\left(p-\pi f \right)  \frac{pqK+w}{2p} - w = \left(p-\pi f \right) \frac{q^2K}{2g} E_o  
+%\end{equation*}
+%\begin{equation*}
+%\frac{g(pqK+w)}{pq^2K} - \frac{2gw}{\left(p-\pi f \right)q^2K} = E_o
+%\end{equation*}
+%\begin{equation*}
+%\frac{g}{q} + \frac{wg}{pq^2K} - \frac{2gw}{\left(p-\pi f \right)q^2K} = E_o
+%\end{equation*}
+%\begin{equation}
+%E_o^*= \left(\frac{g}{q} + \frac{w(D_l)g}{pq^2K} \right)- \frac{2gw(D_l)}{q^2K}\frac{1}{\left(p-\pi(D_l,D_a,e) f \right)} \label{eq:eo_equil}
+%\end{equation}
+if $p > \pi\left(m\right) \phi$. Otherwise outsiders do not have incentives to enter the fishery and $E^*_o=0$. Taking the derivative with respect to $m$ we obtain the response of the outsiders with respect to a change in M\&E
+\[\frac{d f_0}{d m} = -\frac{gw}{q^2K\left(p-\pi\left(m\right) \phi \right)^2} \frac{d\pi(m)}{d m}\phi < 0.\]
+%Then $E_o^{*}< g/q$ and $\partial H_i^*/\partial E_o^*<0$.
+Moreover, $\nicefrac{df_0}{dE_i} < 0$.
+
+
+\subsection{Nash equilibrium}
+We assume that insiders and outsiders decide effort simultaneously.\footnote{Alternative assumptions on timing will change the specific expressions we derive but not the fundamental submodular relationship between different agents' effort levels.} Solving the system of equations given by \eqref{eq:effort} and \eqref{eq:eo_equil}, we obtain the Nash equilibrium ($E_i^*$, $E_o^*$)
+%\begin{equation}
+%E_i^* = \frac{g}{2q} \left( 1 - \frac{w(D_l)}{pqK} \right) - \left[ \frac{g}{2q} + \frac{gw(D_l)}{2pq^2K} - \frac{2gw\left(D_l\right)}{2q^2K\left(p-\pi(D_l,D_a,e) f \right)} \right]  
+%\end{equation}
+%\begin{equation}
+%E_i^* = \frac{g}{2q} \left( - \frac{w(D_l)}{pqK} \right) - \left[ \frac{gw(D_l)}{2pq^2K} - \frac{2gw\left(D_l\right)}{2q^2K\left(p-\pi(D_l,D_a,e) f \right)} \right]  
+%\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{equation}
+%E_o^*=\frac{g}{q} - \left[\frac{g}{2q} \left( 1 - \frac{w(D_l)}{pqK} \right) - \frac{E_o^*}{2} \right] - \frac{gw\left(D_l\right)}{q^2K\left(p-\pi f \right)}  
+%\end{equation}
+%\begin{equation}
+%E_o^*=\frac{g}{q} - \left[ \frac{g}{2q} - \frac{g}{2q}\frac{w(D_l)}{pqK} - \frac{E_o^*}{2} \right] - \frac{gw\left(D_l\right)}{q^2K\left(p-\pi f \right)}  
+%\end{equation}
+%\begin{equation}
+%E_o^*=\frac{g}{q} - \frac{g}{2q} + \frac{g}{2q}\frac{w(D_l)}{pqK} + \frac{E_o^*}{2} - \frac{gw\left(D_l\right)}{q^2K\left(p-\pi f \right)}  
+%\end{equation}
+\begin{align}
+E_i^* & = \frac{gw}{q^2K\left(p-\pi(m) \phi \right)} - \frac{gw}{pqK},\\ 
+E_o^* & =\frac{g}{q} \left(1+ \frac{w}{pqK}\right) - \frac{2gw}{q^2K\left(p-\pi(m) \phi \right)}, \label{eq:eo_nash}
+\end{align}
+%\begin{equation}
+%E_o^*= \left(\frac{g}{q} + \frac{w(D_l)g}{pq^2K} \right)- \frac{2gw(D_l)}{q^2K}\frac{1}{\left(p-\pi(D_l,D_a,e) f \right)} 
+%\end{equation}
+
+\subsection{Effect of M\&E on outsider effort in equilibrium}
+Using \eqref{eq:eo_nash}, we can analyze the effect of M\&E on outsider effort in equilibrium. Assuming $p>\pi\left(m\right)\phi$, the total derivative of outsider harvest effort with respect to $m$ is
+\begin{equation}
+\frac{d E_o^*}{d m} = - \frac{2gwf}{q^2K\left(p-\pi(m)\phi\right)^2} \frac{d \pi}{d m}< 0, \label{eq:exog_effect_M&E}
+\end{equation}
+We can observe that M\&E has a negative effect on outsiders' effort in equilibrium.
+
+\subsection{Effect of M\&E on stock and harvest}
+We analyze the comparative statics of this model to generate the following hypotheses, which we will test with data.
+\begin{prop}
+The effect of M\&E on stock is positive.
+\end{prop}
+\begin{proof}
+We take the total derivative of stock with respect to M\&E to obtain
+\begin{equation*}
+\frac{d S^*}{d m} = \frac{\partial S^{*}}{\partial E_o^{*}} \frac{d E_o^*}{d m}.
+\end{equation*}
+Recall that $\nicefrac{\partial S^{*}_i}{\partial E_o^{*}}<0$ and $\nicefrac{d E_o^*}{d m} < 0$. Therefore $\nicefrac{d S^*}{d m}>0$. 
+\end{proof}
+
+\begin{prop}
+The effects of M\&E on insiders' harvest is positive.
+\end{prop}
+\begin{proof}
+Assuming the quota is non-binding, we take the total derivative of insiders' harvest with respect to M\&E to obtain
+\begin{equation*}
+\frac{d H^*_i}{d m} = \frac{\partial H^{*}_i}{\partial E_o^{*}} \frac{d E_o^*}{d m}.
+\end{equation*}
+If the quota is binding, the total derivative of insiders harvest with respect to M\&E is
+\begin{equation*}
+\frac{d H^{**}_i}{d m} =  \alpha \frac{d S^*}{d m}  
+\end{equation*}
+Recall that $\nicefrac{\partial H^{*}_i}{\partial E_o^{*}}<0$  and $\nicefrac{d E_o^*}{d m} < 0$. Moreover, from Proposition 1, $\nicefrac{d S^*}{d m}>0$. Therefore $\nicefrac{d H^*_i}{d m}>0$ and $\nicefrac{d H^{**}_i}{d m}>0$. 
+\end{proof}
+
+Propositions 1 and 2 provide testable predictions for our empirical analysis. Proposition 1 indicates that patrolling effort has a positive effect on stock density of loco. Meanwhile, Proposition 2 indicates that patrolling effort has a positive effect on harvest.
+
+
+%#################
+%## Methodology###
+%#################
+
+\section{Data} \label{sec:Data}
+Our data set includes a number of variables measured at the TURF level. Our data include TURFs from different regions of Chile that harvest loco, with large variability in terms of number of TURFs, fishers' organizations, and coves. Table \ref{Table:units} shows a summary by region of localities that actively harvest loco and have been considered in our estimation sample.
+\begin{table}[hbpt]
+\begin{center}
+\caption{Number of members, TURFs, fishers' organizations and coves per region. Data sample \label{Table:units}}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\multirow{2}{*}{Region} & \multirow{2}{*}{Members} & \multirow{2}{*}{TURFs} & Fishers' & \multirow{2}{*}{Coves}  \\ 
+& & & Organizations &  \\ \midrule
+Tarapac\'a & 426 & 18 & 11 & 8 \\
+Antofagasta & 357 & 16 & 11 & 9 \\
+Atacama & 1121 & 31 & 24 & 19 \\
+Coquimbo & 2511 & 66 & 43 & 29 \\
+Valparaiso & 1028 & 28 & 22 & 19 \\
+O'Higgins & 251 & 8 & 7 & 4 \\
+Maule & 259 & 8 & 8 & 7 \\
+Biob\'io & 1829 & 40 & 35 & 26 \\
+La Araucan\'ia & 308 & 2 & 2 & 2 \\
+Los R\'ios & 1015 & 40 & 28 & 13 \\
+Los Lagos & 3671 & 97 & 71 & 32 \\
+Ays\'en & 918 & 23 & 20 & 8 \\
+\midrule
+Total & 13694 & 377 & 282 & 174 \\ \bottomrule
+%\multicolumn{5}{p{9cm}}{\footnotesize \textbf{*Notes:} Fishermen cannot be member of more than one union.}
+\end{tabular}
+\end{center}
+\end{table}
+By far, the most significant activity is observed in Los Lagos, followed by Coquimbo. Los R\'ios is the third-largest in terms of number of TURFs, while Biob\'io is third-largest in terms of the number of members, coves, and fishers' organization.
+
+\subsection{Variables}
+\subsubsection*{Outcome variables}
+Our outcome variables are stock density and harvest. Stock density, measured as units of locos (either juveniles or adults) in a square meter (units/$\text{m}^2$), has been commonly used in the literature to assess the biological impacts of TURFs \citep{gelcich2008,Gelcich2012}. Stock density was obtained from files requested from SUBPESCA of yearly stock assessment reports elaborated by consultants in each TURF for the period 1998 to 2018.%This variable is an average of densities obtained by consultants from different samples.
+%From the yearly stock assessment reports, we also obtain information about the effective area ($\text{m}^2$) of a resource in a TURF, which is the estimated area where the species in consideration is located, and about the average size of the resource. Effective areas is commonly used as a proxy of catchability}
+\footnote{Stock assessment reports also contain stock abundance (units) and stock biomass (kilograms). Stock abundance for a particular species is estimated using both density and effective area ($\text{m}^2$) of the resource in a TURF. After obtaining stock abundance, consultants use the estimated relationship between size (mm) and weight (kilograms) together with the average size of the resource to compute stock biomass. The distribution of sizes obtained from sampled units is used by consultants to determine the stock available for extraction, which is a fraction of stock abundance and stock biomass.} Harvest data was obtained upon request from SERNAPESCA. This dataset contains harvest (in kilograms and units) reported by a TURF on a particular date disaggregated by species for 2000-2018.
+
+
+\subsubsection*{Treatment variables}
+Our main treatment variables are distance patrolled overland (in kilometers), and distance patrolled near-shore (in nautical miles). These variables were obtained from annual data of terrestrial patrolling conducted by the Chilean navy provided by the Department of Maritime Technology (TECMAR) for the period 2001-2018. The dataset contains information for each port captainship. 
+%
+To match patrolling effort to TURFs, we linked each area with a port captainship according to the port captainships' jurisdictions obtained from the \href{https://www.leychile.cl/Navegar/index_html?idNorma=142425}{Library of Congress of Chile}. Figure \ref{fig:map_j} illustrates these jurisdictions for Los Lagos and Ays\'en region.
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{Figures-ch1/map_jur.png}
+\end{center}
+\caption{Port captainships' jurisdictions (Los Lagos and Ays\'en regions).\label{fig:map_j}}
+\end{figure}
+
+\subsubsection*{Control variables}
+To condition for differences in productivity, we include the sea surface temperature (SST) in Celsius and salinity at the surface in practical salinity units (PSU) as explanatory variables. Both variables were retrieved for the period 2003-2018 using satellite  from Google Earth Engine \citep{gorelick2017google}. SST was obtained from MODIS Aqua Data at a pixel resolution of 500 meters. For each month, we match a pixel with a TURF using the area centroid. Salinity was obtained from the Hybrid Coordinate Ocean Model (HYCOM) dataset. This product has a resolution of 0.08 arc degrees. Because many centroids match with empty pixels, we interpolate annual data from this dataset using Kringin interpolation with a range of 90 kilometers. For SST we compute the absolute value \textit{z}-score (mean deviation normalized by standard deviation) using the SST mean and standard deviation for the corresponding TURF.
+
+From the yearly stock assessment reports, we also obtain information about stock abundance (units)%the effective area ($\text{m}^2$) of a resource in a TURF, which is the estimated area where the species in consideration is located%, and about the average size of the resource
+%. Effective area is commonly used as a proxy of catchability. 
+, quota requested and approved by the authorities (both in kilograms and units), and prices per unit of the resource. Quota approved is, in general, a third of the available stock. Using these prices we computed annual average prices per unit of loco in an administrative region.
+
+
+
+\subsection{Data processing}
+We construct a panel data set in which the unit of time is a harvest cycle (essentially, a fishing season, which may not correspond with the calendar year). Each stock assessment is at the start of a harvest cycle.\footnote{Loco have an annual reproductive cycle in which eggs hatch to larvae and then develop to juveniles in three to four months \citep{IFOP2000}. Therefore, we consider that using annual panel data is adequate to capture any changes in reproduction levels that extraction may have on stock density.} Therefore, a given harvest cycle may correspond to different chronological periods for different TURFs, depending on when each TURF starts to operate and whether the stock assessment is every year or every other year. %To obtain the dates which correspond to a cycle, we used the period covered between stock assessments.  
+Data retrieved from stock assessment reports are already associated with a particular cycle within a TURF by construction. We computed a weighted average if a variable is measured annually but linked to a harvest cycle that straddles two years (e.g., September to March).
+%Each harvest entry was associated with a corresponding harvest season, and then we sum them along it to obtain the total harvest during a season. 
+We restrict our database to the period 2003-2018. The maximum period between stock assessments is 24 months. Thus, we only include data where the period between evaluations is less than or equal to 24 months (out of 2,983 total observations, we dropped 453 observations). Our final data set includes 377 TURFs and 
+35 port captainships. Not all TURFs are observed during the full duration. On average, TURFs are active for 6.71 fishing seasons (sd = 4.07).  Summary statistics for the dataset used in our main regressions are presented in Table \ref{Table:descriptive}.
+%\begin{landscape}
+\begin{table}
+\begin{center}
+\caption{Summary statistics \label{Table:descriptive}}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{{lrrrrr}}
+\toprule
+\input{Tables-ch1/descriptive.tex}
+\bottomrule
+\end{tabular}
+}
+\end{center}
+\end{table}
+%\end{landscape}
+
+\section{Estimation strategy}\label{sec:empirical}
+\subsection{Stock density}
+To test Proposition 1, we estimate fixed effects models where the units of observation are TURFs in a harvest cycle.\footnote{We conduct a Hausman test to determine whether to use a fixed effects or random effects model. The test was rejected with a $p$-value of 0.000. Therefore, we estimated our models using fixed effects.} Our general specification for the empirical model is the following
+\begin{align}
+\ln\left(Density_{i,t+1}\right)= \beta_0 & + \beta_1 \left(Density_{i,t}\right)  + \beta_2 \ln\left(Patrolling_{i,t}\right) + \textbf{X}_{i,t}^{'} \beta_3  + \mu_i + \delta_{y} + \epsilon_{i,t}, \label{eq:emp_model}
+\end{align}
+where $Density_{i,t}$ is stock density for TURF $i$ in cycle $t$, $Patrolling_{i,t}$ is the distance patrolled overland or near-shore, by the port captainship matched with area $i$. From Proposition 1 in Section 4, we expect that $\beta_2$ is positive. %as patrolling effort is expected to have a negative effect on poaching, and poaching is expected to have a negative effect on density. 
+$\textbf{X}_{i,t}$ is a vector of additional control variables, including salinity categories, the absolute value of the SST \textit{z}-score interacted with the closest cove identifier, and a binary variable \textit{Regulation} to condition for the new fishery law implemented in Chile in 2012.\footnote{The previous set of results also includes number of active areas managed by a fishers' organization, number of species harvested in the area, and a binary variable that took the value of one if an area was neighboring another one within a predetermined radius. These variables were included to capture different harvest pressure, but they were not significant and their exclusion did not change our main results.}  
+We include area fixed effects $\mu_i$ and fishing season fixed-effects $\delta_y$, where $y$ indicates the corresponding season year. We use robust standard errors in our estimations.  
+
+The lagged outcome variable, $Density_{i,t}$, is included to capture the dynamic nature of the underlying process of stock determination. The omission of the lagged outcome variable could introduce bias into our estimates. Under this specification, we require a dynamic panel data estimator such as the first-difference estimator. However, under this estimator, the lagged variable by construction is endogenous.\footnote{The first difference of the lagged term is correlated with the first differences of the error term through the period $t-1$.} Thus, it is necessary to instrument the lagged outcome variable. A solution for this problem is to use the \cite{arellano1991} estimator. This estimator uses a GMM approach where the moment conditions are set using the first-differenced errors together with the lagged values of the dependent variables starting from $t-2$ backward.
+This approach assumes that the errors are serially uncorrelated. Therefore, these lagged values used as instruments are exogenous in period $t$ \citep{cameron2005}. Conversely, if we assume that the error follows a MA(1) process, then only lagged values starting from $t-3$ backward are valid instruments. The first differences of the exogenous variables are used as additional non-GMM instruments. We test for AR(2) correlation in our model to verify the validity of our instruments. In case we reject no auto-correlation of order 2, we test for AR(3) and modify our set of GMM instruments. 
+
+ \subsection{Harvest}
+To test Proposition 2, we estimate fixed effects models for harvest as an outcome variable. Our general specification for the empirical model follows a similar structure as the model for stock density
+\begin{align}
+\ln\left(Harvest_{i,t}\right)= \beta_0 & +\beta_1 \ln\left(Harvest_{i,t-1}\right)  + \beta_2 \ln\left(Patrolling_{i,t}\right) + \textbf{X}_{i,t}^{'} \beta_3  + \mu_i + \delta_{y} + \epsilon_{i,t} \label{eq:emp_model_harvest}
+\end{align}
+where $Harvest_{i,t}$ is harvest by TURF $i$ in cycle $t$, $Patrolling_{i,t}$ is the distance patrolled overland or near-shore by the port captainship matched with area $i$. From Proposition 2 in Section 4, we expect that $\beta_2$ is positive. %as patrolling effort is expected to have a negative effect on poaching, and poaching is expected to have a negative effect on density. 
+$\textbf{X}_{i,t}$ is a vector of additional control variables, including stock abundance, average regional price of loco, quota allocation and the binary variable \textit{Regulation}. We include area fixed effects $\mu_i$ and fishing season fixed-effects $\delta_y$, where $y$ indicates the corresponding season year. We use robust standard errors in our estimations. Note that the $Harvest_{i,t}$ variable captures the harvest that occurs over the course of the entire fishing season, while abundance and quota are the level reported in the stock assessment at the beginning of the fishing season. 
+
+For the harvest model, we do not control for the effect of yearly weather variation on productivity as this is implicit when we include abundance as an explanatory variable. 
+
+
+\subsection{Identification concerns}
+
+Controlling for productivity is essential for identification. Because navy efforts are likely to be allocated to more productive areas (see Subsection \ref{effect_stock_M&E}, Appendix \ref{app:endog} for theoretical treatment), failing to control for productivity would generate an omitted variables problem whereby the coefficient on patrolling would be overestimated. 
+Differences in TURF productivity are likely to be generated by average differences in location, geography, weather, and oceanographic conditions. Thus, we rely on area fixed effects and salinity bins to control for this variation. Moreover, fishing season fixed effects are also included to capture variation in weather between fishing seasons. These fixed effects will additionally control for other differences across sites and over time, such as differences in economic or market conditions. 
+
+Importantly, weather affects not only productivity but also human behavior. Weather conditions could affect patrolling, harvest, and poaching behavior in a TURF. Currents, tides, and wind make it harder to patrol by both the navy and resource owners, increasing the marginal cost of implementing M\&E and decreasing the supply  of M\&E effort (see Subsection \ref{effect_stock_M&E}, Appendix \ref{app:endog}). These variables also affect risk and harvest costs for both TURF members and poachers. Legal harvest and patrolling will be reduced under bad weather conditions, but it is unclear how poaching will be affected on net. Elevated risks will discourage poaching activity, but poaching could be stimulated as low levels of enforcement are observed. Fixed effects will successfully control for average weather at each location, which mitigates some of these sources of confounding variation.  
+However, abnormal average weather during a fishing season differentiated by TURF presents a larger threat for identification. For this reason, we include the interaction between the sea surface temperature \textit{z-score} in absolute value with the closest cove identifier as an additional explanatory variable to condition for environmental conditions. Specifically, this interaction term allows us to condition for abnormal environmental variability with differentiated impacts on each cove.
+
+Endogeneity is one of the main concerns that the literature has stressed when patrolling data is used to estimate conservation outcomes.
+Given scarce resources, the navy may seek to allocate its patrolling to areas where poaching is a more pressing problem (see Subsection \ref{effect_outsider_M&E}, Appendix \ref{app:endog}). As described above, poaching is likely to happen in more productive TURFs. Therefore, the level of poaching could determine the level of patrolling effort made in a jurisdiction and the density level that we observe in an area. As poaching is unobservable, we cannot condition for this in our model.\footnote{Moreover, simultaneity between patrolling effort and density might be present as patrolling is likely to be allocated to highly productive areas.} This challenge jeopardizes a causal interpretation for the relationship in \eqref{eq:emp_model} and \eqref{eq:emp_model_harvest}. However, we highlight a few factors that make our causal interpretation more plausible.
+
+First, in the Chilean case, the navy allocates effort according to a ``local risk profile'', focusing patrolling in areas (or species) with a high risk of overexploitation or high poaching levels. Nevertheless, because patrolling by the navy within the EEZ also involves the surveillance and enforcement of other resources besides loco as well as other regimes besides TURFs (e.g., M\&E for pelagic fisheries), endogeneity concerns will be partially mitigated, as much of the variation in patrolling activity will be driven by other fisheries. 
+
+Second, we also seek to address this concern more directly through empirical analysis. In particular, we use the \cite{arellano1991} estimator, which allows us to instrument  endogenous variables in a similar way to the lagged dependent variable described before, using lagged values of patrolling effort starting from $t-2$ backward. We use this approach to instrument our potential endogenous variable as a robustness check. These estimates have the same sign (but larger magnitude) than our base specification that assumes exogenous patrolling. Thus, the values we report from the exogenous case are, if anything, conservative. This is the expected bias when we consider that M\&E effort is endogeneous and M\&E effort has a negative effect on outsiders' effort (see Subsection \ref{endogM&E}, Appendix \ref{app:endog}).  %In a separate analysis, we also examine the relationship between patrolling effort by the navy (our primary variable of interest) and confiscations by SERNAPESCA, a separate government authority. We find no correlation between the two. We caution that this analysis cannot provide ironclad proof of exogeneity of navy patrolling, but the finding is at least consistent with exogeneity if SERNAPESCA confiscations are a reasonable proxy for poaching activity; we discuss this issue in great detail below. 
+
+%If endogeneity is a problem, then we would expect SERNAPESCA confiscations to be highly correlated with navy patrolling. That is, if near-shore and overland patrolling effort is completely driven by the risk of loco being illegally harvested, we should find elevated navy patrolling in areas with high SERNAPESCA confiscation rates.\footnote{Alternatively, one might argue that high confiscation rates indicate strong action from SERNAPESCA and therefore a diminished need for navy effort. In this case, we should expect a negative correlation between the two.} We use confiscation data aggregated by SERNAPESCA's office for the period 2013-2017. We match this data with each port captainship and we fit a fixed effect model for patrolling effort using confiscation of loco as an explanatory variable. We include year fixed effect and all variables were transformed to logarithms. As we will show, there is no correlation between the SERNAPESCA confiscations and navy patrolling.
+
+A final concern is the potential for corruption. Corruption could take place in two ways: (i) poachers bribe navy officers to avoid punishment or (ii) ecological consultants are bribed to misreport loco stocks. We consider both channels to be unlikely, given the well-functioning police and judicial system in Chile \citep{jarvis2016} and the general perception that communities follow rules within TURFs \citep{Gelcich2009}. However, in either case, corruption would attenuate our estimates, as patrolling would not be as effective in the presence of corruption. 
+%\footnote{Another concern in developing countries is the presence of corruption. Corruption could happen in two ways. The first way is that navy officers could receive a bribe from the illegal fisher to avoid being arrested if he is observed poaching. Even though this could be the case in many countries in Latin America, this seems less likely in Chile as corruption levels are low with well-functioning police and judicial system \citep{jarvis2016}. The second way that corruption might be occur is from the fishing organization giving a bribe to consultants to increase the stock level reported in the yearly assessment (misreporting). According to \cite{jarvis2016}, the introduction of consultants has been controversial. In some cases, they have too much power, while in other cases, they only follow the fishers' organizations' desires. Moreover, if fishers' organizations are not comfortable with the consultant, they can replace them. However, we expect that stock misreporting are isolated cases considering that there is a high perception that communities follow the rules within TURFs \citep{Gelcich2009}. Let us assume, though, that corruption is in place. Under this circumstance, the estimates would be biased toward zero. Patrolling would not be as effective in deterring poaching compared to the case when no corruption exists.} 
+ 
+Appendix \ref{app:endog} provides a more thorough theoretical treatment of endogeneity and how it may affect relationships in our bioeconomic model. Since we cannot comprehensively rule out all endogeneity problems, this exposition helps contextualize our empirical results in light of any lingering concerns. 
+ 
+%#############
+%## Results ##
+%#############
+
+\section{Results} \label{sec:Results}
+This section presents the main results for the fixed effects models for stock density and harvest. We will present evidence that near-shore patrolling increases stock density and harvest. These results are robust under different model specifications, and we will provide a back-of-the-envelope calculation to contextualize the magnitude of these gains. 
+
+We begin by showing our primary results in which patrolling is assumed to be exogenous. As a robustness check, we will also consider a model that allows for potential endogeneity of patrolling. %, and we will also shed light on the plausibility of exogeneity by leveraging the SERNAPESCA data alluded to above. %
+%As a preliminary point, we note that there is no significant association between SERNAPESCA confiscations of loco and distance patrolled overland (coefficient = 0.099, p-value = 0.130) and nearshore (coefficient = -0.119, p-value = 0.300) by the navy. 
+%
+%Consequently, we show our primary results in which patrolling is assumed to be exogenous. As a robustness check, we will also consider a model that allows for potential endogeneity of patrolling. We will see that this model yields similar qualitative results with larger magnitudes for the coefficients of interest. 
+%
+The estimates for equation \eqref{eq:emp_model} in first-differences are presented on Table \ref{Table:density_dynamic_endog}.\footnote{The sample size was reduced from 2137 to 1622 because we use density in $t+1$ as outcome variable.}  Fishing season fixed effects are not included in the table for presentation proposes. Column 1-3 assume that distance patrolled near-shore and distance patrolled overland are exogeneous, while columns 4-6 assume these variables to be endogenous and instrumented under the \cite{arellano1991} framework. %\footnote{We do not report estimation results for the variable  time spent patrolling. The parameter estimates for this variable were in most cases negative or close to zero. This might be suggesting that this variable is noisy as it contains both time spent patrolling overland as well as time spent patrolling near-shore.}
+
+\begin{table}[htbp]\centering
+\caption{Dynamic Panel Data estimations: $\ln\left(Density_{t+1}\right)$  
+\label{Table:density_dynamic_endog}}
+\resizebox{\textwidth}{!}{
+\input{Tables-ch1/reg_density_abond_endog.tex}	
+}
+\end{table}
+In all models we fail to reject the null hypothesis of no serial correlation in the first-differenced errors at order two. This suggests that the lagged instruments used in our estimation are valid.
+%
+Let us first focus on column 1-3. The coefficients for distance patrolled near-shore are positive and significant at the 99\% of confidence level in all three columns, consistent with our hypotheses. However, the coefficient for distance patrolled overland is significant but negative in column 1. As we discussed before, endogeneity may be a problem. In this case, endogeneity could bias our estimates in the opposite direction, as a higher level of overland patrolling might be observed in areas with a higher level of poaching and, therefore, lower levels of stock density. Thus, the unexpected negative sign of distance patrolled overland might be highlighting this issue (see Propositions 4 and 6 in Subsection \ref{endogM&E}, Appendix \ref{app:endog}). If we assume that patrolling is endogenous (column 4-6), the coefficient estimates for distance patrolled overland is positive and insignificant, suggesting that instrumenting this variable using the Arellano-Bond framework mitigates bias by addressing the endogeneity problem. In the case of distance patrolled near-shore, the coefficients remain positive and highly significant, and the estimates in columns 5 and 6 grow in magnitude.  A bias toward zero is likely to be observed when M\&E effort is endogenous and has a negative effect on outsider effort (see Propositions 3, 5 and 6 in Subsection \ref{endogM&E}, Appendix \ref{app:endog}). Together, these results suggest that distance patrolled near-shore significantly increases density---whether patrolling is assumed to be exogenous or not.\footnote{Our results suggest that Proposition 3 in Subsection \ref{endogM&E}, Appendix \ref{app:endog} holds. Even when M\&E is endogenous, the effect is negative on outsider effort (Proposition 3), and then positive on stock (Proposition 6).}
+
+We do not find any significant effect of the new 2012 fishery regulation on stock density. However, it might be that the inclusion of lagged stock density, which is positive and significant in all models at the 99\% confidence level, already captures any change on average density. In column 3 and 6, salinity dummies for 13 $\leq$ PSU $\leq$ 14 and PSU $\geq 14$ are both negative and significant at the 90\% level of confidence, except for PSU $\geq$ 14 in column 3 which is significant at the 95\% level of confidence. This suggests that for salinity levels of PSU $<$ 13 we can find higher levels of stock density.  
+
+The estimation results for equation \eqref{eq:emp_model_harvest} in first-differences are presented in Table \ref{Table:density_dynamic_endog}. As in our presentation of our stock density results, we suppress fishing season fixed effects from the table. Columns 1-3 assume that distance patrolled near-shore and distance patrolled overland are exogeneous, while column 4-6 assume these variables to be endogenous and instrument under the \cite{arellano1991} framework.
+\begin{table}[htbp]\centering
+\caption{Dynamic Panel Data model estimations: $\ln\left(Harvest_t\right)$ \label{Table:harvest}}
+\resizebox{\textwidth}{!}{
+\input{Tables-ch1/reg_harvest2.tex}	
+}
+\end{table}
+
+The parameter estimates show a positive and significant association between distance patrolled near-shore and harvest. The effects are significant at the 99\% level when assuming exogenous patrolling and at the 95\% level of confidence when assuming endogenous patrolling. In the case of distance patrolled overland, we find a positive but insignificant relationship with harvest.
+
+Our other coefficient estimates suggest that harvest is driven strongly by the quota. We see that the coefficient on the quota is positive and significant, while abundance and price appear to be uncorrelated with harvest. However, if quota is excluded from the model, then abundance become significant. Together, these findings suggest that the quota is binding in this fishery.  %as it is suggested on Figure \ref{fig:quota_harvest}.
+% \begin{figure}
+% \begin{center}
+% \includegraphics[width=0.75\textwidth]{Figures-ch1/harvest_quota.pdf}
+% \end{center}
+% \caption{Harvest v/s quota approved. \label{fig:quota_harvest}}
+% \end{figure}
+Even so, we stress that there is significant variation induced by patrolling, indicating that public M\&E efforts, and improvements thereof, have an important role to play as well. Moreover, the impact of M\&E may indeed be even stronger than our estimates suggest. This is because the quota indirectly captures gains from prior patrolling efforts. That is, regulators use loco abundance to set annual quota allowances. Thus, if the stock improves as the result of successful M\&E, then the quota for subsequent periods will be increased. 
+
+In summary, the qualitative effect of patrolling effort is robust across models, regardless of whether patrolling is considered endogenous or not. The results indicate that patrolling effort conducted near-shore has a positive effect on improving outcomes. In our preferred (conservative) specifications, a 10\% increase in near-shore patrolling increases abalone stock density by 0.9\% and harvest by 1.1\%. Our empirical estimates corroborate our theoretical predictions and provide insights into the quantitative importance of external M\&E for the success of collective property rights regimes. 
+
+From Table \ref{Table:descriptive}, we observe that a port captainship conducts on average 263 nautical miles of nearshore patrolling per year and each area within the captainship jurisdiction harvests on average 64,786 units of loco per year. Thus, a 10\% increase in patrolling nearshore (26 nautical miles) and a corresponding 1.1\% increase in harvest translates to a windfall of 713 units harvested per area each year. Chilean fishers received approximately 0.89 USD per unit of loco. Thus, an increase in 713 units translates to additional revenue of 635 USD per year per TURF---which exceeds by 2.5 times the average monthly household income for TURF fishers \citep{chavez2021}---or 6350 USD per year for the average port captainship that contains 10 TURFs.
+
+
+%#################
+%## Conclusion###
+%#################
+\section{Conclusions} \label{sec:Conclusion}
+This paper analyzes the relationship between public M\&E and the success of collective property rights regimes. Specifically, we study the relationship between patrolling effort conducted by the Chilean navy and the stock density of loco and harvest level of areas managed under the TURF program to regulate access to near-shore fisheries. We develop a bio-economic model to derive several testable hypotheses, which we proceed to examine empirically using a suite of regression tests. 
+
+We find that patrolling effort plays an essential role in determining the level of stock density of an area as well as the level of harvest, specifically when patrolling is made near-shore. The results are robust across a wide range of specifications and consistent with our theoretical predictions. We interpret our results causally while acknowledging several important threats to identification, including heterogeneity in environmental conditions, simultaneity, and the potential for corruption. We can assuage these concerns to varying degrees but acknowledge that some cannot be dismissed comprehensively due to data limitations. Most notably, an ideal study setting would feature fully exogenous patrolling effort. Our theoretical modeling helps contextualize our results in light of any lingering endogeneity concerns. Moreover, even in light of this challenge, we stress that our work offers important advantages over the extant literature, as we have a direct measure of M\&E and are able to leverage panel variation where prior work has relied upon cross-sectional comparisons.  
+
+We conclude that external M\&E delivers better ecological and economic outcomes in this setting with collective property rights. Although our study cannot pinpoint the underlying mechanism, we believe there are two likely channels: public M\&E deters poaching, and it may also reinforce cooperative behavior among collective rights holders by virtue of securing property rights.
+
+Notably, the gains from increasing M\&E are substantial, as shown through our back-of-the-envelope calculations. 
+Our results support efforts to increase government assistance to local communities regarding M\&E of collective property rights. Area-based programs require an effective governance structure to solve many coordination problems, such as choosing the level of effort to deter those excluded \citep{jarvis2016}. Ensuring adequate M\&E from external authorities allows resource users to focus on other coordination problems such as sustainable harvest, encouraging other resource users to participate in area-based programs. 
+
+In this paper, we have focused primarily on stock and harvest outcomes from external monitoring, with attendant implications for the well-being of affected communities. Future research can analyze economic and social impacts more directly. One important area of research is the cost-effectiveness of monitoring efforts. One of the putative benefits of implementing co-managed programs is to reduce the cost of enforcement \citep{castilla2001,uchida2012turfs}. \cite{davis2015} have shown in theoretical analysis that the benefits of monitoring and enforcement may be larger than the costs. However, this question has not been addressed empirically, yet it is crucial to ascertaining the value of public M\&E efforts. 
+
+% High cost of effective enforcement program, so better co-enforcement [49,55,56,151], increasing compliance [152-154] and positive attitude to conservation [155].
+
+% - Government support for enforcement activities is considered necessary to legitimise user rights in co-management systems (Kalikoski et al. 2002; McClanahan et al. 1997; Pomeroy and Berkes 1997; Ruddle 1998)
+% - Distance may affect local monitoring.
+
+%################
+%## REFERENCES ##
+%################
+\bibliographystyle{apalike}
+\bibliography{document}
+
+%################
+%## APPENDICES ##
+%################
+\newpage
+
+\begin{appendices}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+
+\section{Endogenous M\&E effort}\label{app:endog}
+
+In this section, we extend our model presented in Section \ref{sec:Theoretical model} including a supply function for external M\&E which depends on outsiders' effort and stock. We show how this relationship might incorporate endogeneity in our empirical model, and we show that the bias will depend on the magnitudes that different partial effects of M\&E on outsider effort can take.
+
+\subsection{Supply of M\&E by the authorities}
+
+The authority in charge of supplying M\&E choose effort $m$ to minimize outsiders' profits and the cost of implementing M\&E.
+\begin{equation*}
+\begin{aligned}
+& \underset{m}{\text{minimize}}
+& & \left[\left(p- \pi\left(m\right) \phi\right) qSE_{o}-wE_{o}\right] + cm,  \\
+& \text{subject to}
+& & m \geq 0,\\ 
+& & & cm \leq F,
+\end{aligned}
+\end{equation*}
+where $F$ is the total funding allocated for M\&E and $c$ is the marginal cost of implementing M\&E.
+If $m>0$ and $F = cm$, then $m = \nicefrac{F}{c}$ and $\pi = \pi\left(\nicefrac{F}{c}\right)$. Therefore, under this scenario, $m$ is independent of $E_o$ and the results are the same than the derived when M\&E is exogenous. 
+
+\subsubsection{Effect of stock and marginal cost on M\&E effort}\label{effect_stock_M&E}
+Assuming $m>0$ and $F>cm$, the first order condition is
+\[ \frac{d \pi\left(m\right)}{d m}\phi qSE_{o} = c, \]
+which implicitly defines the best-response function $m^*$ as:
+\begin{equation}
+m^* \equiv  f_m\left(c,\phi,q,S,E_{o}\right).
+\end{equation}
+Substituting $m^*$ in the first order condition give us
+\[ \frac{d \pi\left(f_m\left(S,c\right)\right)}{d m}\phi qSE_{o} = c. \] 
+Taking the derivative with respect to $S$ we can obtain the response of the authorities to a change in stock levels:
+%\[ \frac{\partial^2 \pi}{\partial m^2} \frac{\partial f_m} {\partial S} fqSE_{o} + \frac{\partial \pi}{\partial m} fqE_o = 0 \] 
+%\[ \frac{\partial^2 \pi}{\partial m^2} \frac{\partial f_m} {\partial S} fqSE_{o}  = - \frac{\partial \pi}{\partial m} fqE_o \] 
+
+\begin{equation}
+\frac{\partial f_m} {\partial S}  =  - \frac{ \frac{\partial \pi}{\partial m}}{\frac{\partial^2 \pi}{\partial m^2}}
+\frac{1}{S} > 0, 
+\end{equation} 
+and taking the derivative with respect to $c$ we can obtain the response of the authorities to a change in the marginal cost of implementing M\&E:
+\begin{equation}
+\frac{\partial f_m} {\partial c}  =  \frac{ 1}{\frac{\partial^2 \pi}{\partial m^2}}
+\frac{1}{\phi qSE_{o}} < 0. 
+\end{equation} 
+
+\subsubsection{Effect of outsider effort on M\&E effort}\label{effect_outsider_M&E}
+Assuming $m>0$, $F>cm$ and $\dot{S}=0$, the first order condition is
+\[ \frac{d \pi\left(m\right)}{d m}\phi qKE_{o}-\frac{d \pi\left(m\right)}{d m} \frac{\phi q^2K}{g}E_{o}E_i - \frac{d \pi\left(m\right)}{d m} \frac{\phi q^2K}{g} E_o^2 = c, \] 
+which implicitly defines the best-response function $m^*$ as:
+\begin{equation}
+m^* \equiv  f_m\left(c,\phi,q,g,K,E_{i},E_{o}\right).
+\end{equation}
+Substituting $m^*$ in the first order condition give us
+\[ \frac{d \pi\left(f_m\left(E_{i},E_{o}\right)\right)}{d m}\phi qKE_{o}-\frac{d \pi\left(f_m\left(E_{i},E_{o}\right)\right)}{d m} \frac{\phi q^2K}{g}E_{o}E_i - \frac{d \pi\left(f_m\left(E_{i},E_{o}\right)\right)}{d m} \frac{\phi q^2K}{g} E_o^2 = c. \] 
+Taking the derivative with respect to $E_o$ we can obtain the response of the authorities to a change in outsiders' effort levels:
+% \[ \frac{\partial^2 \pi}{\partial m^2} \frac{\partial f_m} {\partial E_o} fqKE_{o} + \frac{\partial \pi}{\partial m} fqK- \frac{\partial^2 \pi}{\partial m^2} \frac{\partial f_m} {\partial E_o} \frac{fq^2K}{g}E_iE_o - \frac{\partial \pi}{\partial m} \frac{fq^2K}{g} E_i - \frac{\partial^2 \pi}{\partial m^2} \frac{\partial f_m} {\partial E_o} \frac{fq^2K}{g} E_o^2 - \frac{\partial \pi}{\partial m} \frac{2fq^2K}{g} E_o = 0 \] 
+%
+% \[ \frac{\partial^2 \pi}{\partial m^2} \frac{\partial f_m} {\partial E_o} fqKE_{o} - \frac{\partial^2 \pi}{\partial m^2} \frac{\partial f_m} {\partial E_o} \frac{fq^2K}{g}E_i E_o  - \frac{\partial^2 \pi}{\partial m^2} \frac{\partial f_m} {\partial E_o} \frac{fq^2K}{g} E_o^2  =  \frac{\partial \pi}{\partial m} \frac{2fq^2K}{g} E_o + \frac{\partial \pi}{\partial m} \frac{fq^2K}{g}E_i - \frac{\partial \pi}{\partial m} fqK \] 
+%
+% \[ \frac{\partial f_m} {\partial E_o} \left(\frac{\partial^2 \pi}{\partial m^2}  fqKE_{o} - \frac{\partial^2 \pi}{\partial m^2} \frac{fq^2K}{g}E_{o}E_i  - \frac{\partial^2 \pi}{\partial m^2} \frac{fq^2K}{g} E_o^2 \right) =  \frac{\partial \pi}{\partial m} \frac{2fq^2K}{g} E_o + \frac{\partial \pi}{\partial m} \frac{fq^2K}{g}E_i - \frac{\partial \pi}{\partial m} fqK \] 
+%
+% \[ \frac{\partial f_m} {\partial E_o}  = \frac{ \frac{\partial \pi}{\partial m} \frac{2fq^2K}{g} E_o + \frac{\partial \pi}{\partial m} \frac{fq^2K}{g}E_i - \frac{\partial \pi}{\partial m} fqK}{\left(\frac{\partial^2 \pi}{\partial m^2}  fqKE_{o} - \frac{\partial^2 \pi}{\partial m^2} \frac{fq^2K}{g}E_{o}E_i  - \frac{\partial^2 \pi}{\partial m^2} \frac{fq^2K}{g} E_o^2 \right)} \] 
+%
+\begin{equation}
+\frac{\partial f_m} {\partial E_o}  =  - \frac{ \frac{\partial \pi}{\partial m}}{\frac{\partial^2 \pi}{\partial m^2}}
+\frac{1}{E_o} \left(\frac{1-\frac{2q}{g} E_o -  \frac{q}{g}E_i }{1 -  \frac{q}{g}E_i  -  \frac{q}{g} E_o} \right). \label{eq:fm_eo}
+\end{equation} 
+%
+Therefore, the sign of $\nicefrac{\partial f_m} {\partial E_o}$ will depend on whether $\left(1-\nicefrac{2q}{g} E_o -  \nicefrac{q}{g}E_i \right)$ is positive or negative, as $\left(1-\nicefrac{q}{g} E_o -  \nicefrac{q}{g}E_i \right)$ must be positive to have a positive stock in equilibrium. 
+
+Let us now take the derivative with respect to $E_i$ to obtain the response of the authorities to a change in insiders effort:
+% \[ \frac{\partial^2 \pi}{\partial m^2} \frac{\partial f_m} {\partial E_i} fqKE_{o} - \frac{\partial^2 \pi}{\partial m^2} \frac{\partial f_m} {\partial E_i} \frac{fq^2K}{g}E_iE_o - \frac{\partial \pi}{\partial m} \frac{fq^2K}{g} E_o - \frac{\partial^2 \pi}{\partial m^2} \frac{\partial f_m} {\partial E_i} \frac{fq^2K}{g} E_o^2  = 0 \] 
+%
+% \[ \frac{\partial f_m} {\partial E_i} 
+% \left(\frac{\partial^2 \pi}{\partial m^2} fqKE_{o} - \frac{\partial^2 \pi}{\partial m^2} \frac{fq^2K}{g}E_iE_o  - \frac{\partial^2 \pi}{\partial m^2}  \frac{fq^2K}{g} E_o^2\right)  =  \frac{\partial \pi}{\partial m} \frac{fq^2K}{g} E_o \] 
+%
+% \[ \frac{\partial f_m} {\partial E_i} 
+%   = \frac{ \frac{\partial \pi}{\partial m} \frac{fq^2K}{g} E_o}{\frac{\partial^2 \pi}{\partial m^2} fqKE_{o} \left(1 - \frac{q}{g}E_i  - \frac{q}{g} E_o\right)} =  \frac{ \frac{\partial \pi}{\partial m} q}{\frac{\partial^2 \pi}{\partial m^2} g \left(1 - \frac{q}{g}E_i  - \frac{q}{g} E_o\right)}  \] 
+%
+\begin{equation} \frac{\partial f_m} {\partial E_i} 
+  = \frac{ \frac{\partial \pi}{\partial m}}{\frac{\partial^2 \pi}{\partial m^2}}\frac{q}{g} \frac{1}{\left(1 - \frac{q}{g}E_i  - \frac{q}{g} E_o\right)} < 0 
+\end{equation}
+The authorities will decrease the level of M\&E when higher insiders effort is observed.  
+
+\subsection{Nash equilibrium}
+In this case, we assume that insiders, outsiders, and the enforcement authorities decide effort simultaneously. In equilibrium we must have:
+\begin{align}
+E_i^* \equiv & f_i\left(g,q,w,p,q,K,E_o^*\right) \label{eq:ei_nash_i} \\
+E_o^* \equiv & f_o\left(g,q,E_i^*,w,K,p,m^*,\phi\right)  \label{eq:eo_nash_i} \\
+m^* \equiv & f_m\left(c,\phi,q,S,E_o^*\right) \label{eq:m_nash_i}.
+\end{align}
+
+\subsection{Effect of endogenous M\&E on outsider effort}\label{endogM&E}
+Using \eqref{eq:ei_nash_i}, \eqref{eq:eo_nash_i} and \eqref{eq:m_nash_i}, we can analyze the effect of M\&E on outsider effort in equilibrium. In equilbrium we require that
+\[E_o^* \equiv f_o\left[f_i\left(E_o^*\left(m\right)\right),f_m\left(f_i\left(E_o^*\left(m\right)\right),E_o^*\left(m\right)\right)\right].\]
+
+\begin{prop}
+If M\&E is endogenous, it will have a negative effect on outsiders effort in equilibrium if $\left(1-\nicefrac{2q}{g} E_o -  \nicefrac{q}{g}E_i \right) > 0$ or $\lvert 1 - \frac{\partial f_o}{\partial E_i}\frac{\partial f_i}{\partial E_o} - \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o} \rvert >  \lvert \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_o} \rvert$.
+
+\end{prop}
+\begin{proof}
+The total effect of  M\&E on outsiders' effort in equilibrium is
+\[ \frac{d E_o^*}{d m} =  \frac{\partial f_o}{\partial E_i} \frac{\partial f_i}{\partial E_o} \frac{d E_o^*}{d m} + \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o } \frac{d E_o^*}{d m} + \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_o} \frac{d E_o^*}{d m} + \frac{\partial f_o}{\partial m}. \]
+Solving for $\nicefrac{dE_o^*}{dm}$ we obtain
+\begin{equation} 
+\frac{d E_o^*}{d m}  = \frac{\frac{\partial f_o}{\partial m}}{1 - \frac{\partial f_o}{\partial E_i}\frac{\partial f_i}{\partial E_o} - \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o} - \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_o} }.\label{endog_m}
+\end{equation}
+Because $\nicefrac{\partial f_o}{\partial m} < 0$, we can observe that M\&E has a negative effect on outsiders' effort if the denominator is positive. 
+%\[1 > \frac{\partial f_o}{\partial E_i} \frac{\partial f_i}{\partial E_o} + \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o } + \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_o} \]
+%
+%The first term is positive, while the second is negative. Therefore, the effect on outsider effort is ambiguous in this case, even though we can sign its effect on the best-response function of the authorities. However, 
+
+From \eqref{eq:exog_effect_M&E} we know that if M\&E is exogenous, then $\nicefrac{d E_o^*}{d m}<0$. Under exogeneity of $m$, \eqref{endog_m} becomes
+\begin{equation} 
+\frac{d E_o^*}{d m}  = \frac{\frac{\partial f_o}{\partial m}}{1 - \frac{\partial f_o}{\partial E_i}\frac{\partial f_i}{\partial E_o}}<0, \label{exog_m}
+\end{equation}
+which implies that $\left(1 - \frac{\partial f_o}{\partial E_i} \frac{\partial f_i}{\partial E_o}\right) > 0$. Therefore, for the denominator to be positive, we require  $\left(\frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o} +  \frac{\partial f_m}{\partial E_o}\right) > 0$. Recall $\nicefrac{f_m}{E_i} < 0$, $\nicefrac{f_i}{E_o} < 0$, then $\frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o}>0$. If $\left(1-\nicefrac{2q}{g} E_o -  \nicefrac{q}{g}E_i \right) > 0$, from \eqref{eq:fm_eo} we have $\frac{\partial f_m} {\partial E_o}>0$ and $\frac{d E_o^*}{d m}<0$. Otherwise, we require $\lvert 1 - \frac{\partial f_o}{\partial E_i}\frac{\partial f_i}{\partial E_o} - \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o} \rvert >  \lvert \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_o} \rvert$.
+\end{proof}
+In other words, M\&E would reduce outsider effort $\nicefrac{d E_o^*}{d m}<0$ if total fishing effort is small enough to make $\left(1-\nicefrac{2q}{g} E_o -  \nicefrac{q}{g}E_i \right) > 0$ (so the level of stock is high, making M\&E profitable). Alternatively, M\&E will reduce outsider effort if the authority's choice of M\&E is not strongly responsive to outsider effort or if the outsider's choice of effort is not strongly responsive to M\&E so that 
+$\lvert\frac{\partial f_o}{\partial m}\frac{\partial f_m}{\partial E_o}\rvert$ is small. 
+
+\begin{prop}
+If M\&E is endogenous, it will have a positive effect on outsider effort in equilibrium if $\left(1-\nicefrac{2q}{g} E_o -  \nicefrac{q}{g}E_i \right) < 0$ and $\lvert 1 - \frac{\partial f_o}{\partial E_i}\frac{\partial f_i}{\partial E_o} - \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o} \rvert <  \lvert \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_o} \rvert$.
+\end{prop}
+\begin{proof}
+If $\left(1-\nicefrac{2q}{g} E_o -  \nicefrac{q}{g}E_i \right) < 0$, from \eqref{eq:fm_eo} we have $\frac{\partial f_m} {\partial E_o}<0$. Recall $\nicefrac{\partial f_o}{\partial m} < 0$. Thus, the denominator of \eqref{endog_m} is negative if $\lvert 1 - \frac{\partial f_o}{\partial E_i}\frac{\partial f_i}{\partial E_o} - \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o} \rvert < \lvert \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_o} \rvert$ and , therefore, $\frac{d E_o^*}{d m}>0$.
+\end{proof}
+Proposition 4 is the converse of the prior proposition. Under these conditions, the authority essentially gives up, reducing M\&E effort because the level of stock is sufficiently low due to high poaching activity. %suggest that if outsiders effort is large enough, as well as the effect of M\&E on its best response function $\nicefrac{\partial f_o}{\partial m}$ and the effect of outsider effort on the authorities best response function $\nicefrac{\partial f_m}{\partial E_o}$, then an increase in M\&E effort will actually increase outsiders harvest effort. In this case, authorities will give up, reducing M\&E effort as the level of stock is low due to high poaching activity. 
+
+\begin{prop}
+The effect of M\&E will be biased toward to zero if $\left(1-\nicefrac{2q}{g} E_o -  \nicefrac{q}{g}E_i \right) > 0$ or $\lvert \frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o}\rvert > \lvert  \frac{\partial f_m}{\partial E_o} \rvert $.
+\end{prop}
+\begin{proof}
+The effect of M\&E effort will be biased toward to zero if the denominator of equation \eqref{endog_m} is larger than the denominator of equation \eqref{exog_m}
+\[1 - \frac{\partial f_o}{\partial E_i}\frac{\partial f_i}{\partial E_o} - \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o} - \frac{\partial f_o}{\partial m} \frac{\partial f_m}{\partial E_o} > 1 - \frac{\partial f_o}{\partial E_i}\frac{\partial f_i}{\partial E_o}, \]
+which gives us the following condition 
+\begin{equation}
+- \frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o} < \frac{\partial f_m}{\partial E_o} \label{eq:bias}
+\end{equation}
+Recall $\nicefrac{f_m}{E_i} < 0$, $\nicefrac{f_i}{E_o} < 0$, then $\frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o}>0$. If $\left(1-\nicefrac{2q}{g} E_o -  \nicefrac{q}{g}E_i \right) > 0$, from \eqref{eq:fm_eo} we have $\frac{\partial f_m} {\partial E_o}>0$ and condition \eqref{eq:bias} is satisfied. Otherwise, $\frac{\partial f_m} {\partial E_o}<0$ and we require $\lvert \frac{\partial f_m}{\partial E_i} \frac{\partial f_i}{\partial E_o}\rvert > \lvert  \frac{\partial f_m}{\partial E_o} \rvert $ to satisfies condition \eqref{eq:bias}.
+\end{proof}
+
+
+\subsection{Effect of endogneous M\&E on stock and harvest}
+
+\begin{prop}
+The effect of endogenous M\&E on stock is positive if Proposition 3 holds.
+\end{prop}
+\begin{proof}
+We take the total derivative of stock with respect to M\&E to obtain
+\begin{equation*}
+\frac{d S^*}{d m} = \frac{\partial S^{*}}{\partial E_o^{*}} \frac{d E_o^*}{d m}.
+\end{equation*}
+Recall that $\nicefrac{\partial S^{*}_i}{\partial E_o^{*}}<0$ and $\nicefrac{d E_o^*}{d m} < 0$. Therefore $\nicefrac{d S^*}{d m}>0$. 
+\end{proof}
+
+\begin{prop}
+The effects of endogenous M\&E on insiders' harvest is positive  if Proposition 3 holds.
+\end{prop}
+\begin{proof}
+Assuming the quota is non-binding, we take the total derivative of insiders' harvest with respect to M\&E to obtain
+\begin{equation*}
+\frac{d H^*_i}{d m} = \frac{\partial H^{*}_i}{\partial E_o^{*}} \frac{d E_o^*}{d m}.
+\end{equation*}
+If the quota is binding, the total derivative of insiders harvest with respect to M\&E is
+\begin{equation*}
+\frac{d H^{**}_i}{d m} =  \alpha \frac{d S^*}{d m}  
+\end{equation*}
+Recall that $\nicefrac{\partial H^{*}_i}{\partial E_o^{*}}<0$  and $\nicefrac{d E_o^*}{d m} < 0$. Moreover, from Proposition 1, $\nicefrac{d S^*}{d m}>0$. Therefore $\nicefrac{d H^*_i}{d m}>0$ and $\nicefrac{d H^{**}_i}{d m}>0$. 
+\end{proof}
+
+\end{appendices}
+\end{document}
